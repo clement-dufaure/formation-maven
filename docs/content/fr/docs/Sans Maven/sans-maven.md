@@ -6,7 +6,7 @@ draft: false
 images: []
 menu:
   docs:
-    parent: "intro"
+    parent: "sans-maven"
 toc: true
 weight: 102
 ---
