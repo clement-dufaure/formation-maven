@@ -104,6 +104,7 @@ projet-maven
 
 ## Le fichier de configuration : le POM
 
+Même avec les conventions respectés, sa présence est nécessaire pour que maven considère le projet comme projet maven.
 
 
 
