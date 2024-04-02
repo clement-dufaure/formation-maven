@@ -27,22 +27,22 @@ ou *De quoi va-t-on parler ?*
 
 - Compilation d'une classes
 ```sh
-javac ./src/re/dufau/demo/model/User.java -d ./build/classes
-javac ./src/re/dufau/demo/dao/UserDao.java -d ./build/classes
+javac ./sources/re/dufau/demo/model/User.java -d ./build/classes
+javac ./sources/re/dufau/demo/dao/UserDao.java -d ./build/classes
 ```
 
 1er problème : les classes s'appellent entre elles
 
 - Compilation de plusieurs classes "ensemble"
 ```sh
-echo src/re/dufau/demo/dao/UserDao.java > ./build/sources.txt
-echo src/re/dufau/demo/model/User.java  >> ./build/sources.txt
+echo sources/re/dufau/demo/dao/UserDao.java > ./build/sources.txt
+echo sources/re/dufau/demo/model/User.java  >> ./build/sources.txt
 javac @./build/sources.txt -d ./build/classes
 ```
 
 - Compilation de toutes les classes
 ```sh
-find src -name "*.java"  > ./build/sources.txt
+find sources -name "*.java"  > ./build/sources.txt
 javac @./build/sources.txt -d ./build/classes 
 ```
 
