@@ -31,6 +31,17 @@ Transformer le projet java brut (0-sans-maven) en projet maven.
 
 L'exercice est validé si `mvn package` finit en succès et que la log indique avoir compilé quelquechose !
 
+Les dépendances requises :
+En runtime :
+- org.springframework
+    - spring-webmvc
+    - spring-aop
+- org.slf4j
+    - slf4j-api
+    - slf4j-simple
+En test :
+- junit-jupiter-engine
+
 
 Remarques :
 - Sur l'arborescence:
