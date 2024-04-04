@@ -111,10 +111,55 @@ Compléments</button><div class=collapse id=section-30f1d344be0449b14ff81ac9d3fa
 Lancer les tests unitaire</p><p>https://maven.apache.org/surefire/maven-surefire-plugin/usage.html</p><p><strong>Maven failsafe plugin</strong>
 Lancer les tests d&rsquo;intégration</p><p>https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html</p><p><strong>JaCoCo</strong>
 Mesurer la couverture de test</p><p>https://www.eclemma.org/jacoco/trunk/doc/maven.html</p><p><strong>Sonar</strong></p><p>https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/</p><p><strong>Maven Assembly plugin</strong>
-Agréger différents fichiers (construits ou non) sous forme de package -> création de livrable pour le CEI.</p><p>http://maven.apache.org/plugins/maven-assembly-plugin/</p><p><strong>Maven Exec plugin</strong>
+Préciser un artifact personnalisé</p><p>http://maven.apache.org/plugins/maven-assembly-plugin/</p><p>Description xml du livrable, par exemple obtenir un zip contenant le jar + tous les jar de dépendances :</p><pre><code>&lt;assembly xmlns=&quot;http://maven.apache.org/ASSEMBLY/2.1.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd&quot;&gt;
+
+    &lt;id&gt;zip&lt;/id&gt;
+
+    &lt;formats&gt;
+        &lt;format&gt;zip&lt;/format&gt;
+    &lt;/formats&gt;
+    &lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt;
+
+    &lt;fileSets&gt;
+        &lt;fileSet&gt;
+            &lt;directory&gt;target&lt;/directory&gt;
+            &lt;outputDirectory /&gt;
+            &lt;includes&gt;
+                &lt;include&gt;*.jar&lt;/include&gt;
+            &lt;/includes&gt;
+        &lt;/fileSet&gt;
+    &lt;/fileSets&gt;
+
+    &lt;dependencySets&gt;
+        &lt;dependencySet&gt;
+            &lt;outputDirectory&gt;/lib&lt;/outputDirectory&gt;
+        &lt;/dependencySet&gt;
+    &lt;/dependencySets&gt;
+
+&lt;/assembly&gt;
+</code></pre><p>A configurer à la phase package :</p><pre><code>&lt;plugin&gt;
+                &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.3.0&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;descriptors&gt;
+                        &lt;descriptor&gt;src/assembly/zip.xml&lt;/descriptor&gt;
+                    &lt;/descriptors&gt;
+                    &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt;
+                    &lt;finalName&gt;mon-batch-${project.version}&lt;/finalName&gt;
+                &lt;/configuration&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;phase&gt;package&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;single&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+</code></pre><p><strong>Maven Exec plugin</strong>
 Excution d&rsquo;executable (par exemple avant un test d&rsquo;intégration)</p><p>https://www.mojohaus.org/exec-maven-plugin/</p><p><strong>Maven Build Helper plugin</strong>
 Ensemble d&rsquo;aide à la construction (récupération ip locale, ajout de source au classpath)</p><p>https://www.mojohaus.org/build-helper-maven-plugin/plugin-info.html</p><p><strong>Maven Versions plugin</strong>
-Gérer les Versions</p><p>https://www.mojohaus.org/versions-maven-plugin/</p><p><strong>Cargo plugin</strong>
+Gérer les Versions</p><p>https://www.mojohaus.org/versions/versions-maven-plugin/</p><p><strong>Cargo plugin</strong>
 Lancer un tomcat avec votre war (par exemple avant un test d&rsquo;intégration)</p><p>https://codehaus-cargo.github.io/cargo/Home.html</p><p><strong>Dependency check</strong>
 Controler les CVE des librairies</p><p>https://jeremylong.github.io/DependencyCheck/dependency-check-maven/</p><p>&ndash;</p><p>Exemple de déclaration :</p><pre><code class=language-xml>    &lt;project&gt;
         ...
@@ -145,4 +190,4 @@ Controler les CVE des librairies</p><p>https://jeremylong.github.io/DependencyCh
 <script src=/js/vendor/katex/dist/katex.min.93253b59f879e8b8bf4ef8eec49737249299a1cc8b9c25eb1b0c94ae722f3bc470677d56dfdfcc838ccc904ee3ebcc46a5336495f3b1d7fdbb182f3e6b952390.js integrity="sha512-kyU7Wfh56Li/TvjuxJc3JJKZocyLnCXrGwyUrnIvO8RwZ31W39/Mg4zMkE7j68xGpTNklfOx1/27GC8+a5UjkA==" crossorigin=anonymous defer></script>
 <script src=/js/vendor/katex/dist/contrib/auto-render.min.b688a23169501c711300d4bdb5ae40c52ee8976f722fbf3871eb709a51db2ea5d7bf51eaef0e82af7542d973d2f681d9c46b70b72d902601642a15af9b9ce80d.js integrity="sha512-toiiMWlQHHETANS9ta5AxS7ol29yL784cetwmlHbLqXXv1Hq7w6Cr3VC2XPS9oHZxGtwty2QJgFkKhWvm5zoDQ==" crossorigin=anonymous defer></script>
 <script src=/main.min.b8e7e565bd2186f67f57d2c5d9680f67abbb2a977ff20ad27eb51f5a7b9071fdec7b71a5e964a41a38fb59cb12d43b76e0b3ac8247cb7063bb73efc06a9ac529.js integrity="sha512-uOflZb0hhvZ/V9LF2WgPZ6u7Kpd/8grSfrUfWnuQcf3se3Gl6WSkGjj7WcsS1Dt24LOsgkfLcGO7c+/AaprFKQ==" crossorigin=anonymous defer></script>
-<script src=https://formation-maven.dufau.re/index.min.1c5e592b7fa0937abc6b2efe10b054032ca7ab595eb5f3362e53bb8a25d183e064e872134c8929483a03649e7a9f3479b8286002f1aa7659be8691d47d86d627.js integrity="sha512-HF5ZK3+gk3q8ay7+ELBUAyynq1letfM2LlO7iiXRg+Bk6HITTIkpSDoDZJ56nzR5uChgAvGqdlm+hpHUfYbWJw==" crossorigin=anonymous defer></script></body></html>
+<script src=https://formation-maven.dufau.re/index.min.e0e8c79b8401b0045fef3ea09287c92371c74c87adaaf36db0d14e02d96b38ee22396a52e2741f23aa6d7b2a5d445602d4ad86c25fe81f78400c8c8fb3a08282.js integrity="sha512-4OjHm4QBsARf7z6gkofJI3HHTIetqvNtsNFOAtlrOO4iOWpS4nQfI6pteypdRFYC1K2Gwl/oH3hADIyPs6CCgg==" crossorigin=anonymous defer></script></body></html>
