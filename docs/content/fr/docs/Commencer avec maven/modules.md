@@ -107,8 +107,15 @@ L'IDE va généralement alerter si on surcharge la version.
 Ce principe de management s'applique à toutes les conf de la dépendance telles que le scope.
 
 
+## Mettre à jour toutes les références à la version des modules
 
-## Des pom parents externes : le cas de Spring Boot
+Plugin "version" :
+```
+mvn versions:set -DnewVersion=1.2.3 
+```
+
+
+# Des pom parents externes : le cas de Spring Boot
 
 ```xml
 <!-- Héritage Spring-->
@@ -129,7 +136,7 @@ Comme pour les dépendances, il existe un pluginManagement pour préconfigurer d
 ```
 
 
-## Héritage multiple ?
+# Héritage multiple ?
 
 - Sous module qui a besoin spécifiquement d'un autre parent ?
 - Besoin de plusieurs dependencyManagment ?

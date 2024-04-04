@@ -133,7 +133,7 @@ en meme temps que
 ```
 
 
-## Connaitre les résolution de version effectives
+## Connaitre les résolutions de version effectives
 
 `mvn dependency:tree -Dverbose`
 

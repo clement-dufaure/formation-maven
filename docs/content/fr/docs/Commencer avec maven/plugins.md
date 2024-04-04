@@ -182,9 +182,64 @@ https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
 
 
 **Maven Assembly plugin**
-Agréger différents fichiers (construits ou non) sous forme de package -> création de livrable pour le CEI.
+Préciser un artifact personnalisé
 
 http://maven.apache.org/plugins/maven-assembly-plugin/
+
+Description xml du livrable, par exemple obtenir un zip contenant le jar + tous les jar de dépendances :
+
+```
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+
+    <id>zip</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory />
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>
+```
+
+A configurer à la phase package :
+```
+<plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/zip.xml</descriptor>
+                    </descriptors>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <finalName>mon-batch-${project.version}</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+```
+
 
 
 **Maven Exec plugin**
@@ -202,7 +257,7 @@ https://www.mojohaus.org/build-helper-maven-plugin/plugin-info.html
 **Maven Versions plugin**
 Gérer les Versions
 
-https://www.mojohaus.org/versions-maven-plugin/
+https://www.mojohaus.org/versions/versions-maven-plugin/
 
 
 **Cargo plugin**
