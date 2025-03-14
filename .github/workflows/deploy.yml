@@ -45,10 +45,9 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: cd to support
-        run: cd support
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        working-directory: ./support
         with:
           node-version: '20'
           cache: 'npm'
@@ -56,8 +55,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
+        working-directory: ./support
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build production website
+        working-directory: ./support
         env:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
