@@ -47,10 +47,9 @@ jobs:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        working-directory: ./support
         with:
           node-version: '20'
-          cache: 'npm'
+          #cache: 'npm'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
