@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sans Maven on Formation maven</title>
+    <link>http://localhost:1313/docs/sans-maven/</link>
+    <description>Recent content in Sans Maven on Formation maven</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <atom:link href="http://localhost:1313/docs/sans-maven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comment builder un projet avec uniquement le JDK ?</title>
+      <link>http://localhost:1313/docs/sans-maven/sans-maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/sans-maven/sans-maven/</guid>
+      <description>&lt;p&gt;Qu&amp;rsquo;est ce que &amp;ldquo;builder un projet&amp;rdquo; ??&lt;/p&gt;&#xA;&lt;p&gt;ou &lt;em&gt;De quoi va-t-on parler ?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Exécuter du code java&lt;/li&gt;&#xA;&lt;li&gt;Exécuter conjointement plusieurs classes ensemble&lt;/li&gt;&#xA;&lt;li&gt;Utiliser du code de biliothèques externes&lt;/li&gt;&#xA;&lt;li&gt;Changer la version d&amp;rsquo;un bibliothèque&lt;/li&gt;&#xA;&lt;li&gt;Préparer un déploiement : fournir un jar/war&lt;/li&gt;&#xA;&lt;li&gt;Lancer des tests unitaires ?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;compiler-son-code&#34;&gt;Compiler son code&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Compilation d&amp;rsquo;une classes&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;expressive-code&#34;&gt;&#xD;&#xA;  &lt;figure class=&#34;frame is-terminal not-content&#34;&gt;&#xD;&#xA;  &lt;figcaption class=&#34;header&#34;&gt;&#xD;&#xA;    &lt;span class=&#34;title&#34;&gt;&lt;/span&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;javac ./sources/re/dufau/demo/model/User.java -d ./build/classes&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;javac ./sources/re/dufau/demo/dao/UserDao.java -d ./build/classes&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/figure&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;p&gt;1er problème : les classes s&amp;rsquo;appellent entre elles&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
