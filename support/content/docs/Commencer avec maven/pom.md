@@ -10,7 +10,7 @@ weight: 204
 
 [Référence](http://maven.apache.org/pom.html)
 
-# Le minimum
+## Le minimum
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -40,7 +40,7 @@ On peut voir notre POM effectif avec :
 mvn help:effective-pom
 ```
 
-# Le type d'artifact à construire
+## Le type d'artifact à construire
 
 ```xml
   <packaging>jar</packaging>
@@ -54,7 +54,7 @@ Permet à maven de lier les phases de build à certains plugins, et notemment la
 
 [Voir les associations](http://maven.apache.org/ref/3.6.3/maven-core/default-bindings.html)
 
-# Déclaration des dépendances
+## Déclaration des dépendances
 
 ```xml
 <dependencies>
@@ -66,11 +66,11 @@ Permet à maven de lier les phases de build à certains plugins, et notemment la
 
 [Vers la partie dédiée](/docs/commencer-avec-maven/dependances/)
 
-# Properties
+## Properties
 
 Permettent de variabiliser dépendances, plugin ou généralement toute autre configuration de maven. Elles peuvent être personnalisées pour centraliser certaines configurations comme les versions.
 
-## La version de java
+### La version de java
 
 Quelquesoit le jdk que l'on a installé, on peut souhaiter préciser la source dans laquelle est écrite le code et la version dans laquelle on va le compiler.
 Par exemple, j'ai un jdk 21 mais je sais que mon environnement d'éxécution sera en 17.
@@ -91,7 +91,7 @@ On va préciser ces élement à maven via les properties (qui seront injectées 
 </properties>
 ```
 
-ou comme génralement, on met la même version dans les deux :
+ou comme généralement, on met la même version dans les deux :
 
 ```xml
 <properties>
@@ -108,7 +108,7 @@ ou si le projet est en Spring Boot :
 
 Attention, par défaut maven compile en une vieille version de java (<=1.8)
 
-## L'encodage
+### L'encodage
 
 Il s'agit d'indiquer à maven quel est l'encodage des fichier qu'il va lire, et dans quel encodage il doit écrire les fichier non compilés (ressourecs) :
 
@@ -119,7 +119,7 @@ Il s'agit d'indiquer à maven quel est l'encodage des fichier qu'il va lire, et 
 </properties>
 ```
 
-## Properties personnalisées
+### Properties personnalisées
 
 - accessible depuis le reste du pom (`${prop}`)
 - surchargeable par un argument en ligne de commande `-Dkey=value`
@@ -158,7 +158,7 @@ https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html
 
 **Warning: Do not filter files with binary content like images! This will most likely result in corrupt output.**
 
-# Les paramètre de build
+## Les paramètre de build
 
 L'ensemble des paramètre dont une grande partie devrait rester implicite
 
@@ -169,7 +169,6 @@ L'ensemble des paramètre dont une grande partie devrait rester implicite
   <finalName>${project.artifactId}-${project.version}</finalName>
   <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
   <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-  <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
   <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
   <resources>
     <resource>
@@ -188,43 +187,5 @@ L'ensemble des paramètre dont une grande partie devrait rester implicite
 Généralement, on va surtout personnaliser uniquement cette dernière balise de plugin pour ajouter des plugins et leurs goals dans le cycle de vie.
 
 [Vers la partie dédiée](/docs/commencer-avec-maven/plugins/)
-
-
-# Les profils
-
-Il est possible de cumuler plusieurs configurations de build concurrentes via les profils, il sont ensuite appelable via la ligne de commande maven `-Pnomprofil`
-
-```xml
-<profiles>
-  <profile>
-    <id>nomprofil</id>
-    <properties>
-      <ma.conf>maConfDeQf</ma.conf>
-    </properties>
-    <build>
-    ...
-    </build>
-  </profile>
-</profiles>
-
-
-Ils peuvent également s'activer sous conditions
-
-```xml
-<profiles>
-  <profile>
-    <id>linux</id>
-    <activation>
-      <jdk>1.5</jdk>
-      <os>
-        <family>!windows</family>
-      </os>
-    </activation>
-    <properties>
-      <linux>true</linux>
-    </properties>
-  </profile>
-</profiles>
-```
 
 

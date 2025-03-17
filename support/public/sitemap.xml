@@ -10,6 +10,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/docs/des-projets-plus-complexes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/docs/compl%C3%A9ments/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -44,11 +48,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/docs/commencer-avec-maven/les-plugins/</loc>
+    <loc>http://localhost:1313/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/</loc>
+    <loc>http://localhost:1313/docs/des-projets-plus-complexes/les-plugins/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

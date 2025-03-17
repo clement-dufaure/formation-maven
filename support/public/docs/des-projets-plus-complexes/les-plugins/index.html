@@ -14,9 +14,9 @@
 
 <link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
 
-<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/commencer-avec-maven/les-plugins/">
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/des-projets-plus-complexes/les-plugins/">
 
-  <link rel="canonical" href="http://localhost:1313/docs/commencer-avec-maven/les-plugins/">
+  <link rel="canonical" href="http://localhost:1313/docs/des-projets-plus-complexes/les-plugins/">
 
 
 <title>Les plugins  |  Formation maven</title>
@@ -47,10 +47,10 @@
       >
 <link rel="manifest" href="/manifest.webmanifest">
 
-<meta property="og:url" content="http://localhost:1313/docs/commencer-avec-maven/les-plugins/">
+<meta property="og:url" content="http://localhost:1313/docs/des-projets-plus-complexes/les-plugins/">
   <meta property="og:site_name" content="Formation maven">
   <meta property="og:title" content="Les plugins">
-  <meta property="og:description" content="En maven, toutes les exécution sont des goals contenues dans des plugins, les mapping phase-&gt;goals des plugins essentiels étant définis par défaut.">
+  <meta property="og:description" content="En plus de tous les plugins chargés par défaut, il est possible de personnaliser leur configuration et d’en ajouter d’autres">
   <meta property="og:locale" content="fr">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -59,7 +59,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
   <meta name="twitter:title" content="Les plugins">
-  <meta name="twitter:description" content="En maven, toutes les exécution sont des goals contenues dans des plugins, les mapping phase-&gt;goals des plugins essentiels étant définis par défaut.">
+  <meta name="twitter:description" content="En plus de tous les plugins chargés par défaut, il est possible de personnaliser leur configuration et d’en ajouter d’autres">
       <meta name="twitter:site" content="@getdoks">
 
     
@@ -83,8 +83,8 @@
      },
      {
        "@type": "ListItem",
-       "item": "http://localhost:1313/docs/commencer-avec-maven/",
-       "name": "Commencer Avec Maven",
+       "item": "http://localhost:1313/docs/des-projets-plus-complexes/",
+       "name": "DES Projets Plus Complexes",
        "position": 3
      },
      {
@@ -161,7 +161,7 @@
   </li>
 
   <li>
-    <details open open>
+    <details open>
       <summary>Commencer avec Maven</summary>
       <ul class="list-unstyled list-nested">
 
@@ -180,20 +180,24 @@
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
-  </li>
-
-  <li class="active" >
-      <a aria-current="page" href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
-  </li>
       </ul>
     </details>
   </li>
 
   <li>
-      <a href="/docs/des-projets-plus-complexes/">Des projets plus complexes</a>
+    <details open open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
+  </li>
+      </ul>
+    </details>
   </li>
 
   <li>
@@ -351,7 +355,7 @@
   </li>
 
   <li>
-    <details open open>
+    <details open>
       <summary>Commencer avec Maven</summary>
       <ul class="list-unstyled list-nested">
 
@@ -370,20 +374,24 @@
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
-  </li>
-
-  <li class="active" >
-      <a aria-current="page" href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
-  </li>
       </ul>
     </details>
   </li>
 
   <li>
-      <a href="/docs/des-projets-plus-complexes/">Des projets plus complexes</a>
+    <details open open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
+  </li>
+      </ul>
+    </details>
   </li>
 
   <li>
@@ -407,7 +415,23 @@
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
   <h3>Sur cette page</h3>
-    <nav id="toc"></nav>
+    <nav id="toc">
+  <ul>
+    <li><a href="#déclaration-dun-plugin">Déclaration d&rsquo;un plugin</a></li>
+    <li><a href="#utilisation-dun-plugin">Utilisation d&rsquo;un plugin</a></li>
+    <li><a href="#quelques-plugins-à-ajouter-dans-son-projet">Quelques plugins à ajouter dans son projet</a>
+      <ul>
+        <li><a href="#avoir-un-code-bien-formatté">Avoir un code bien formatté</a></li>
+        <li><a href="#tester-et-mesurer-sa-converture-de-test">Tester et mesurer sa converture de test</a></li>
+        <li><a href="#déployer-vers-les-outils-de-qualimétrie">Déployer vers les outils de qualimétrie</a></li>
+        <li><a href="#création-avancée-de-livrable">Création avancée de livrable</a></li>
+        <li><a href="#exécutions-avancées-pour-tests-dintégration">Exécutions avancées pour tests d&rsquo;intégration</a></li>
+        <li><a href="#sécurité-des-dépendances">Sécurité des dépendances</a></li>
+        <li><a href="#divers">Divers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -419,13 +443,29 @@
 				<details>
     <summary>Sur cette page</summary>
     <div class="page-links">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#déclaration-dun-plugin">Déclaration d&rsquo;un plugin</a></li>
+    <li><a href="#utilisation-dun-plugin">Utilisation d&rsquo;un plugin</a></li>
+    <li><a href="#quelques-plugins-à-ajouter-dans-son-projet">Quelques plugins à ajouter dans son projet</a>
+      <ul>
+        <li><a href="#avoir-un-code-bien-formatté">Avoir un code bien formatté</a></li>
+        <li><a href="#tester-et-mesurer-sa-converture-de-test">Tester et mesurer sa converture de test</a></li>
+        <li><a href="#déployer-vers-les-outils-de-qualimétrie">Déployer vers les outils de qualimétrie</a></li>
+        <li><a href="#création-avancée-de-livrable">Création avancée de livrable</a></li>
+        <li><a href="#exécutions-avancées-pour-tests-dintégration">Exécutions avancées pour tests d&rsquo;intégration</a></li>
+        <li><a href="#sécurité-des-dépendances">Sécurité des dépendances</a></li>
+        <li><a href="#divers">Divers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
   </details>
 
 			</nav>
-			<p>En maven, toutes les exécution sont des goals contenues dans des plugins, les mapping phase-&gt;goals des plugins essentiels étant définis par défaut.</p>
-<h1 id="déclaration-dun-plugin">Déclaration d&rsquo;un plugin</h1>
+			<p>En plus de tous les plugins chargés par défaut, il est possible de personnaliser leur configuration et d&rsquo;en ajouter d&rsquo;autres</p>
+<h2 id="déclaration-dun-plugin">Déclaration d&rsquo;un plugin<a href="#déclaration-dun-plugin" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Exemple : le plugin de compilation</p>
 <p>par défaut dans le &ldquo;super pom&rdquo; :</p>
 
@@ -514,7 +554,7 @@
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<h1 id="utilisation-dun-plugin">Utilisation d&rsquo;un plugin</h1>
+<h2 id="utilisation-dun-plugin">Utilisation d&rsquo;un plugin<a href="#utilisation-dun-plugin" class="anchor" aria-hidden="true">#</a> </h2>
 <ul>
 <li>Directement par le goal voulu</li>
 </ul>
@@ -542,8 +582,9 @@
 </span></span><span class="line"><span class="cl">      <span class="nt">&lt;/executions&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>RAPPEL des mappings par défaut : http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings)</p>
-<h1 id="quelques-plugins">Quelques plugins</h1>
+<p>RAPPEL des mappings par défaut : <a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings">http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings</a></p>
+<h2 id="quelques-plugins-à-ajouter-dans-son-projet">Quelques plugins à ajouter dans son projet<a href="#quelques-plugins-à-ajouter-dans-son-projet" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="avoir-un-code-bien-formatté">Avoir un code bien formatté<a href="#avoir-un-code-bien-formatté" class="anchor" aria-hidden="true">#</a> </h3>
 <p><strong>Spotless plugin</strong> : formatter son code</p>
 <p>https://github.com/diffplug/spotless</p>
 <p>exemple de déclaration :</p>
@@ -599,20 +640,33 @@
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn spotless:apply</span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>Maven surefire plugin</strong> : intégré d&rsquo;office, parfois à paramétrer
-Lancer les tests unitaire</p>
-<p>https://maven.apache.org/surefire/maven-surefire-plugin/usage.html</p>
-<p><strong>Maven failsafe plugin</strong>
-Lancer les tests d&rsquo;intégration</p>
-<p>https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html</p>
-<p><strong>JaCoCo</strong>
-Mesurer la couverture de test</p>
-<p>https://www.eclemma.org/jacoco/trunk/doc/maven.html</p>
+<h3 id="tester-et-mesurer-sa-converture-de-test">Tester et mesurer sa converture de test<a href="#tester-et-mesurer-sa-converture-de-test" class="anchor" aria-hidden="true">#</a> </h3>
+<p><strong>Maven surefire plugin</strong> est intégré et exécuté d&rsquo;office, il lance les tests unitaires selon une norme définie par le plugin (et personnalisable si besoin)</p>
+<p><a href="https://maven.apache.org/surefire/maven-surefire-plugin/usage.html">https://maven.apache.org/surefire/maven-surefire-plugin/usage.html</a></p>
+<p><strong>Maven failsafe plugin</strong> est à ajouter pour éxécuter des test d&rsquo;intégration <strong>au sens Maven</strong>, c&rsquo;est à dire des tests nécessitant un packaging de l&rsquo;application.</p>
+<p>Le plugin est très similaire au plugin surefire, les changements essentiels sont le nommage des classes par défaut et la position par défaut dans le cycke de vie.</p>
+<p><a href="https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html">https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html</a></p>
+<p>Remarque : sans que ce soit nécéessairement une mauvaise pratique, il est parfois utile de sauter l&rsquo;éxécution des tests (tests longs, découpage du pipeline en taches élémentaires, &hellip;)</p>
+<p><a href="https://maven.apache.org/surefire/maven-failsafe-plugin/examples/skipping-tests.html">Les plugins surfire et failsafe prévoient de sauter simplement les phases de tests.</a></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn package -DskipTests</span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>JaCoCo</strong> va rajouter un agent java lors de l&rsquo;éxécution des tests pour mesurer la couverture de test</p>
+<p><a href="https://www.eclemma.org/jacoco/trunk/doc/maven.html">https://www.eclemma.org/jacoco/trunk/doc/maven.html</a></p>
+<h3 id="déployer-vers-les-outils-de-qualimétrie">Déployer vers les outils de qualimétrie<a href="#déployer-vers-les-outils-de-qualimétrie" class="anchor" aria-hidden="true">#</a> </h3>
 <p><strong>Sonar</strong></p>
-<p>https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/</p>
-<p><strong>Maven Assembly plugin</strong>
-Préciser un artifact personnalisé</p>
-<p>http://maven.apache.org/plugins/maven-assembly-plugin/</p>
+<p><a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/">https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/</a></p>
+<h3 id="création-avancée-de-livrable">Création avancée de livrable<a href="#création-avancée-de-livrable" class="anchor" aria-hidden="true">#</a> </h3>
+<p><strong>Maven Assembly plugin</strong> : Définir un artifact personnalisé</p>
+<p><a href="http://maven.apache.org/plugins/maven-assembly-plugin/">http://maven.apache.org/plugins/maven-assembly-plugin/</a></p>
 <p>Description xml du livrable, par exemple obtenir un zip contenant le jar + tous les jar de dépendances :</p>
 
 
@@ -622,32 +676,34 @@ Préciser un artifact personnalisé</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <pre tabindex="0"><code>&lt;assembly xmlns=&#34;http://maven.apache.org/ASSEMBLY/2.1.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xsi:schemaLocation=&#34;http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd&#34;&gt;
-
-    &lt;id&gt;zip&lt;/id&gt;
-
-    &lt;formats&gt;
-        &lt;format&gt;zip&lt;/format&gt;
-    &lt;/formats&gt;
-    &lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt;
-
-    &lt;fileSets&gt;
-        &lt;fileSet&gt;
-            &lt;directory&gt;target&lt;/directory&gt;
-            &lt;outputDirectory /&gt;
-            &lt;includes&gt;
-                &lt;include&gt;*.jar&lt;/include&gt;
-            &lt;/includes&gt;
-        &lt;/fileSet&gt;
-    &lt;/fileSets&gt;
-
-    &lt;dependencySets&gt;
-        &lt;dependencySet&gt;
-            &lt;outputDirectory&gt;/lib&lt;/outputDirectory&gt;
-        &lt;/dependencySet&gt;
-    &lt;/dependencySets&gt;
-
-&lt;/assembly&gt;</code></pre>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;assembly</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/ASSEMBLY/2.1.0&#34;</span> 
+</span></span><span class="line"><span class="cl">  <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
+</span></span><span class="line"><span class="cl">  <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;id&gt;</span>zip<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;formats&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;format&gt;</span>zip<span class="nt">&lt;/format&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/formats&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;includeBaseDirectory&gt;</span>false<span class="nt">&lt;/includeBaseDirectory&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;fileSets&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;fileSet&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;directory&gt;</span>target<span class="nt">&lt;/directory&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;outputDirectory</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;includes&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;include&gt;</span>*.jar<span class="nt">&lt;/include&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/includes&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/fileSet&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/fileSets&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependencySets&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependencySet&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;outputDirectory&gt;</span>/lib<span class="nt">&lt;/outputDirectory&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependencySet&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencySets&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/assembly&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
 <p>A configurer à la phase package :</p>
@@ -659,42 +715,38 @@ Préciser un artifact personnalisé</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <pre tabindex="0"><code>&lt;plugin&gt;
-                &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
-                &lt;version&gt;3.3.0&lt;/version&gt;
-                &lt;configuration&gt;
-                    &lt;descriptors&gt;
-                        &lt;descriptor&gt;src/assembly/zip.xml&lt;/descriptor&gt;
-                    &lt;/descriptors&gt;
-                    &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt;
-                    &lt;finalName&gt;mon-batch-${project.version}&lt;/finalName&gt;
-                &lt;/configuration&gt;
-                &lt;executions&gt;
-                    &lt;execution&gt;
-                        &lt;phase&gt;package&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;single&lt;/goal&gt;
-                        &lt;/goals&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;</code></pre>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>maven-assembly-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>3.3.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;descriptors&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;descriptor&gt;</span>src/assembly/zip.xml<span class="nt">&lt;/descriptor&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/descriptors&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;appendAssemblyId&gt;</span>false<span class="nt">&lt;/appendAssemblyId&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;finalName&gt;</span>mon-batch-${project.version}<span class="nt">&lt;/finalName&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;executions&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;execution&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;phase&gt;</span>package<span class="nt">&lt;/phase&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;goals&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;goal&gt;</span>single<span class="nt">&lt;/goal&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;/goals&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/execution&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/executions&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/plugin&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
+<h3 id="exécutions-avancées-pour-tests-dintégration">Exécutions avancées pour tests d&rsquo;intégration<a href="#exécutions-avancées-pour-tests-dintégration" class="anchor" aria-hidden="true">#</a> </h3>
 <p><strong>Maven Exec plugin</strong>
 Excution d&rsquo;executable (par exemple avant un test d&rsquo;intégration)</p>
-<p>https://www.mojohaus.org/exec-maven-plugin/</p>
-<p><strong>Maven Build Helper plugin</strong>
-Ensemble d&rsquo;aide à la construction (récupération ip locale, ajout de source au classpath)</p>
-<p>https://www.mojohaus.org/build-helper-maven-plugin/plugin-info.html</p>
-<p><strong>Maven Versions plugin</strong>
-Gérer les Versions</p>
-<p>https://www.mojohaus.org/versions/versions-maven-plugin/</p>
+<p><a href="https://www.mojohaus.org/exec-maven-plugin/">https://www.mojohaus.org/exec-maven-plugin/</a></p>
 <p><strong>Cargo plugin</strong>
 Lancer un tomcat avec votre war (par exemple avant un test d&rsquo;intégration)</p>
-<p>https://codehaus-cargo.github.io/cargo/Home.html</p>
+<p><a href="https://codehaus-cargo.github.io/cargo/Home.html">https://codehaus-cargo.github.io/cargo/Home.html</a></p>
+<h3 id="sécurité-des-dépendances">Sécurité des dépendances<a href="#sécurité-des-dépendances" class="anchor" aria-hidden="true">#</a> </h3>
 <p><strong>Dependency check</strong>
 Controler les CVE des librairies</p>
-<p>https://jeremylong.github.io/DependencyCheck/dependency-check-maven/</p>
+<p><a href="https://jeremylong.github.io/DependencyCheck/dependency-check-maven/">https://jeremylong.github.io/DependencyCheck/dependency-check-maven/</a></p>
 <p>&ndash;</p>
 <p>Exemple de déclaration :</p>
 
@@ -732,6 +784,9 @@ Controler les CVE des librairies</p>
   </figure>
 </div>
 <p>Ca marche parce que par défaut le goal &ldquo;check&rdquo; de dependency check s&rsquo;éxécute à la phase &ldquo;verify&rdquo;</p>
+<h3 id="divers">Divers<a href="#divers" class="anchor" aria-hidden="true">#</a> </h3>
+<p><strong>Maven Versions plugin</strong> : c&rsquo;est celui qu&rsquo;on a utilisé pour changer toutes les versions d&rsquo;un projet multimodule d&rsquo;un coup</p>
+<p><a href="https://www.mojohaus.org/versions/versions-maven-plugin/">https://www.mojohaus.org/versions/versions-maven-plugin/</a></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -749,7 +804,7 @@ Controler les CVE des librairies</p>
 				</div>
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Préc</div>
-					<a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/" class="stretched-link text-reset text-decoration-none">Les modules et les héritages</a>
+					<a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/" class="stretched-link text-reset text-decoration-none">Les modules et les héritages</a>
 				</div>
 			</div>
 		</div>

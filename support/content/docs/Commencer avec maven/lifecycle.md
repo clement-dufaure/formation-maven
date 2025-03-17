@@ -8,7 +8,7 @@ toc: true
 weight: 203
 ---
 
-# Les plugins et goals
+## Les plugins et goals
 
 Dans maven, tout est plugin.
 Les plugins contiennent le code des exécutions exposés comme "goals".
@@ -30,7 +30,7 @@ mvn compiler:testCompile
 
 Cependant la plupart du temps on souhaite enchaîner logiquement plusieurs goals.
 
-# Le cycle de vie du build
+## Le cycle de vie du build
 
 Maven décrit plusieurs enchaînements de phase décrivant les étapes fines de contruction d'un projet.
 
@@ -56,12 +56,12 @@ Même si on peut théoriquement appeler toutes les phases, on appelle générale
 -  install - Installe le livrable dans le dépot local
 -  deploy - Déploie le livrable dans le dépot distant
 
-# Configuration et conventions
+## Configuration et conventions
 
 Maven fonctionne par **conventions**.
 Suivre ces conventions permet de limiter le nombre de configurations à expliciter.
 
-## Architecture standard d'un projet Maven
+### Architecture standard d'un projet Maven
 
 ```
 projet-maven
@@ -99,7 +99,7 @@ projet-maven
 :warning: on ne veut pas partager le dossier target => à ajouter au .gitignore
 
 
-## Le fichier de configuration : le POM
+### Le fichier de configuration : le POM
 
 Même avec les conventions respectés, sa présence est nécessaire pour que maven considère le projet comme projet maven.
 

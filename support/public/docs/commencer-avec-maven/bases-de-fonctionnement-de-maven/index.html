@@ -180,13 +180,21 @@
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+      </ul>
+    </details>
   </li>
 
   <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+    <details open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
   </li>
       </ul>
     </details>
@@ -366,13 +374,21 @@
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+      </ul>
+    </details>
   </li>
 
   <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+    <details open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
   </li>
       </ul>
     </details>
@@ -401,8 +417,14 @@
   <h3>Sur cette page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#architecture-standard-dun-projet-maven">Architecture standard d&rsquo;un projet Maven</a></li>
-    <li><a href="#le-fichier-de-configuration--le-pom">Le fichier de configuration : le POM</a></li>
+    <li><a href="#les-plugins-et-goals">Les plugins et goals</a></li>
+    <li><a href="#le-cycle-de-vie-du-build">Le cycle de vie du build</a></li>
+    <li><a href="#configuration-et-conventions">Configuration et conventions</a>
+      <ul>
+        <li><a href="#architecture-standard-dun-projet-maven">Architecture standard d&rsquo;un projet Maven</a></li>
+        <li><a href="#le-fichier-de-configuration--le-pom">Le fichier de configuration : le POM</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -418,15 +440,21 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#architecture-standard-dun-projet-maven">Architecture standard d&rsquo;un projet Maven</a></li>
-    <li><a href="#le-fichier-de-configuration--le-pom">Le fichier de configuration : le POM</a></li>
+    <li><a href="#les-plugins-et-goals">Les plugins et goals</a></li>
+    <li><a href="#le-cycle-de-vie-du-build">Le cycle de vie du build</a></li>
+    <li><a href="#configuration-et-conventions">Configuration et conventions</a>
+      <ul>
+        <li><a href="#architecture-standard-dun-projet-maven">Architecture standard d&rsquo;un projet Maven</a></li>
+        <li><a href="#le-fichier-de-configuration--le-pom">Le fichier de configuration : le POM</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<h1 id="les-plugins-et-goals">Les plugins et goals</h1>
+			<h2 id="les-plugins-et-goals">Les plugins et goals<a href="#les-plugins-et-goals" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Dans maven, tout est plugin.
 Les plugins contiennent le code des exécutions exposés comme &ldquo;goals&rdquo;.
 Une exécution se déclenche avec la syntaxe :</p>
@@ -467,7 +495,7 @@ Une exécution se déclenche avec la syntaxe :</p>
   </figure>
 </div>
 <p>Cependant la plupart du temps on souhaite enchaîner logiquement plusieurs goals.</p>
-<h1 id="le-cycle-de-vie-du-build">Le cycle de vie du build</h1>
+<h2 id="le-cycle-de-vie-du-build">Le cycle de vie du build<a href="#le-cycle-de-vie-du-build" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Maven décrit plusieurs enchaînements de phase décrivant les étapes fines de contruction d&rsquo;un projet.</p>
 <p><a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#lifecycle-reference">Lifecycle Reference</a></p>
 
@@ -495,10 +523,10 @@ Par défaut, un certain nombre de goals sont déjà associé à certaines phases
 <li>install - Installe le livrable dans le dépot local</li>
 <li>deploy - Déploie le livrable dans le dépot distant</li>
 </ul>
-<h1 id="configuration-et-conventions">Configuration et conventions</h1>
+<h2 id="configuration-et-conventions">Configuration et conventions<a href="#configuration-et-conventions" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Maven fonctionne par <strong>conventions</strong>.
 Suivre ces conventions permet de limiter le nombre de configurations à expliciter.</p>
-<h2 id="architecture-standard-dun-projet-maven">Architecture standard d&rsquo;un projet Maven<a href="#architecture-standard-dun-projet-maven" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="architecture-standard-dun-projet-maven">Architecture standard d&rsquo;un projet Maven<a href="#architecture-standard-dun-projet-maven" class="anchor" aria-hidden="true">#</a> </h3>
 
 
 
@@ -540,7 +568,7 @@ Suivre ces conventions permet de limiter le nombre de configurations à explicit
   </figure>
 </div>
 <p>&#x26a0;&#xfe0f; on ne veut pas partager le dossier target =&gt; à ajouter au .gitignore</p>
-<h2 id="le-fichier-de-configuration--le-pom">Le fichier de configuration : le POM<a href="#le-fichier-de-configuration--le-pom" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="le-fichier-de-configuration--le-pom">Le fichier de configuration : le POM<a href="#le-fichier-de-configuration--le-pom" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Même avec les conventions respectés, sa présence est nécessaire pour que maven considère le projet comme projet maven.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">

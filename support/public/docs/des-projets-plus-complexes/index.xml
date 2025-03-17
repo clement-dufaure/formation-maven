@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Des projets plus complexes on Formation maven</title>
+    <link>http://localhost:1313/docs/des-projets-plus-complexes/</link>
+    <description>Recent content in Des projets plus complexes on Formation maven</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <atom:link href="http://localhost:1313/docs/des-projets-plus-complexes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Les modules et les héritages</title>
+      <link>http://localhost:1313/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/</guid>
+      <description>&lt;h2 id=&#34;découper-en-modules&#34;&gt;Découper en modules&lt;/h2&gt;&#xA;&lt;p&gt;On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, &amp;hellip;).&#xA;Admettons l&amp;rsquo;architecture après découpage :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Les plugins</title>
+      <link>http://localhost:1313/docs/des-projets-plus-complexes/les-plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/des-projets-plus-complexes/les-plugins/</guid>
+      <description>&lt;p&gt;En plus de tous les plugins chargés par défaut, il est possible de personnaliser leur configuration et d&amp;rsquo;en ajouter d&amp;rsquo;autres&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

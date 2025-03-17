@@ -5,13 +5,10 @@ lead: ""
 draft: false
 images: []
 toc: true
-weight: 207
+weight: 306
 ---
 
-- Un POM peut hériter d'un autre (avec le type pom).
-- Un projet peut définir plusieurs **modules** qui seront liés entre eux
-
-# Découper en modules
+## Découper en modules
 
 On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, ...).
 Admettons l'architecture après découpage :
@@ -46,6 +43,8 @@ Il va devoir au mimimum contenir les conf suivantes :
 
 Attention, il s'agit du nom des fichiers et non pas des artifactId (qui pourront donc être différent du nom des dossiers).
 
+## Initier un pom parent
+
 Du point de vue des modules, il va falloir déclarer l'héritage de ce pom parent.
 
 ```xml
@@ -60,9 +59,9 @@ Du point de vue des modules, il va falloir déclarer l'héritage de ce pom paren
 **Attention** : en découpant en module, on rajoute des dépendances entre les modules qui n'existaient a fortiori pas avant découpage.
 L'ordre de ces dépendance impactera l'ordre d'exécution des modules maven.
 
-# Le pom parent
+## Exploiter le pom parent
 
-Au delà du découpage en module, le pom parent permet de mutualiser des configurations. Tout projet maven récupèra :
+Au delà du découpage en module, le pom parent permet de mutualiser des configurations. Tout projet maven récupère :
 - les propriétés
 - les dépendences et gestion des dépendances
 - les plugins et gestion des plugins
@@ -71,7 +70,7 @@ Il faut éviter de déclarer toutes les dépendances du projet dans le pom paren
 
 Cependant on sohaite quand même concentrer le maximum de configuration dans le pom parent, qui peut servir d'index des dépendances et plugins utilisés avec leur versions notamment.
 
-## Le dependencyManagement
+### Le dependencyManagement
 
 ```xml
     <dependencyManagement>
@@ -104,25 +103,6 @@ L'IDE va généralement alerter si on surcharge la version.
 Ce principe de management s'applique à toutes les conf de la dépendance telles que le scope.
 
 
-## Mettre à jour toutes les références à la version des modules
-
-Plugin "version" :
-```
-mvn versions:set -DnewVersion=1.2.3 
-```
-
-
-# Des pom parents externes : le cas de Spring Boot
-
-```xml
-<!-- Héritage Spring-->
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.4.0</version>
-</parent>
-```
-
 Comme pour les dépendances, il existe un pluginManagement pour préconfigurer des plugin sans les éxécuter :
 
 ```xml
@@ -133,7 +113,38 @@ Comme pour les dépendances, il existe un pluginManagement pour préconfigurer d
 ```
 
 
-# Héritage multiple ?
+
+## Mettre à jour toutes les références à la version des modules
+
+Plugin "version" :
+
+```sh
+mvn versions:set -DnewVersion=1.2.3 
+```
+
+
+## Des pom parents externes : le cas de Spring Boot
+
+```xml
+<!-- Héritage Spring-->
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.4.3</version>
+</parent>
+```
+
+On va alors retrouver un dependencyManagment relativement complet :
+
+[https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.4.3/spring-boot-starter-parent-3.4.3.pom](https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.4.3/spring-boot-starter-parent-3.4.3.pom)
+
+puis
+
+[https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.3/spring-boot-dependencies-3.4.3.pom](https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.3/spring-boot-dependencies-3.4.3.pom)
+
+
+
+## Héritage multiple ?
 
 - Sous module qui a besoin spécifiquement d'un autre parent ?
 - Besoin de plusieurs dependencyManagment ?

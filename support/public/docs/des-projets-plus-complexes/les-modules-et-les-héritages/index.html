@@ -14,12 +14,12 @@
 
 <link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
 
-<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">
 
-  <link rel="canonical" href="http://localhost:1313/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">
+  <link rel="canonical" href="http://localhost:1313/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">
 
 
-<title>La gestion des dépendances  |  Formation maven</title>
+<title>Les modules et les héritages  |  Formation maven</title>
 <meta name="description" content="Congrats on setting up a new Doks project!">
 
     
@@ -47,11 +47,10 @@
       >
 <link rel="manifest" href="/manifest.webmanifest">
 
-<meta property="og:url" content="http://localhost:1313/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">
+<meta property="og:url" content="http://localhost:1313/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">
   <meta property="og:site_name" content="Formation maven">
-  <meta property="og:title" content="La gestion des dépendances">
-  <meta property="og:description" content="Les dépendances maven reposent sur un système de référentiel. Par défaut elle sont recherchées sur maven central : https://repo.maven.apache.org/maven2
-On peut dans ses configurations préciser d’autres référentiels pour aller chercher les dépendances, ou paramétrer un miroir.">
+  <meta property="og:title" content="Les modules et les héritages">
+  <meta property="og:description" content="Découper en modules On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, …). Admettons l’architecture après découpage :">
   <meta property="og:locale" content="fr">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -59,9 +58,8 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
-  <meta name="twitter:title" content="La gestion des dépendances">
-  <meta name="twitter:description" content="Les dépendances maven reposent sur un système de référentiel. Par défaut elle sont recherchées sur maven central : https://repo.maven.apache.org/maven2
-On peut dans ses configurations préciser d’autres référentiels pour aller chercher les dépendances, ou paramétrer un miroir.">
+  <meta name="twitter:title" content="Les modules et les héritages">
+  <meta name="twitter:description" content="Découper en modules On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, …). Admettons l’architecture après découpage :">
       <meta name="twitter:site" content="@getdoks">
 
     
@@ -85,13 +83,13 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
      },
      {
        "@type": "ListItem",
-       "item": "http://localhost:1313/docs/commencer-avec-maven/",
-       "name": "Commencer Avec Maven",
+       "item": "http://localhost:1313/docs/des-projets-plus-complexes/",
+       "name": "DES Projets Plus Complexes",
        "position": 3
      },
      {
        "@type": "ListItem",
-       "name": "La Gestion DES Dépendances",
+       "name": "Les Modules Et Les Héritages",
        "position": 4
      }
    ]
@@ -163,7 +161,7 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
   </li>
 
   <li>
-    <details open open>
+    <details open>
       <summary>Commencer avec Maven</summary>
       <ul class="list-unstyled list-nested">
 
@@ -179,20 +177,20 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
       <a href="/docs/commencer-avec-maven/le-fichier-pom/">Le fichier POM</a>
   </li>
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
+  <li>
+      <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
       </ul>
     </details>
   </li>
 
   <li>
-    <details open>
+    <details open open>
       <summary>Des projets plus complexes</summary>
       <ul class="list-unstyled list-nested">
 
-  <li>
-      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
   </li>
 
   <li>
@@ -357,7 +355,7 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
   </li>
 
   <li>
-    <details open open>
+    <details open>
       <summary>Commencer avec Maven</summary>
       <ul class="list-unstyled list-nested">
 
@@ -373,20 +371,20 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
       <a href="/docs/commencer-avec-maven/le-fichier-pom/">Le fichier POM</a>
   </li>
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
+  <li>
+      <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
       </ul>
     </details>
   </li>
 
   <li>
-    <details open>
+    <details open open>
       <summary>Des projets plus complexes</summary>
       <ul class="list-unstyled list-nested">
 
-  <li>
-      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
   </li>
 
   <li>
@@ -419,20 +417,16 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
   <h3>Sur cette page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#définition-dune-dépendances">Définition d&rsquo;une dépendances</a>
+    <li><a href="#découper-en-modules">Découper en modules</a></li>
+    <li><a href="#initier-un-pom-parent">Initier un pom parent</a></li>
+    <li><a href="#exploiter-le-pom-parent">Exploiter le pom parent</a>
       <ul>
-        <li><a href="#le-type">Le type</a></li>
-        <li><a href="#le-scope">Le scope</a></li>
+        <li><a href="#le-dependencymanagement">Le dependencyManagement</a></li>
       </ul>
     </li>
-    <li><a href="#les-dépendances-transitives">Les dépendances transitives</a>
-      <ul>
-        <li><a href="#sélection-de-version">Sélection de version</a></li>
-        <li><a href="#connaitre-les-résolutions-de-version-effectives">Connaitre les résolutions de version effectives</a></li>
-        <li><a href="#être-précis-sur-les-versions">Être précis sur les versions</a></li>
-      </ul>
-    </li>
-    <li><a href="#documentation-de-référence">Documentation de référence</a></li>
+    <li><a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules</a></li>
+    <li><a href="#des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot</a></li>
+    <li><a href="#héritage-multiple-">Héritage multiple ?</a></li>
   </ul>
 </nav>
 </div>
@@ -440,7 +434,7 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
-			<h1>La gestion des dépendances</h1>
+			<h1>Les modules et les héritages</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
 				<details>
@@ -448,31 +442,25 @@ On peut dans ses configurations préciser d’autres référentiels pour aller c
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#définition-dune-dépendances">Définition d&rsquo;une dépendances</a>
+    <li><a href="#découper-en-modules">Découper en modules</a></li>
+    <li><a href="#initier-un-pom-parent">Initier un pom parent</a></li>
+    <li><a href="#exploiter-le-pom-parent">Exploiter le pom parent</a>
       <ul>
-        <li><a href="#le-type">Le type</a></li>
-        <li><a href="#le-scope">Le scope</a></li>
+        <li><a href="#le-dependencymanagement">Le dependencyManagement</a></li>
       </ul>
     </li>
-    <li><a href="#les-dépendances-transitives">Les dépendances transitives</a>
-      <ul>
-        <li><a href="#sélection-de-version">Sélection de version</a></li>
-        <li><a href="#connaitre-les-résolutions-de-version-effectives">Connaitre les résolutions de version effectives</a></li>
-        <li><a href="#être-précis-sur-les-versions">Être précis sur les versions</a></li>
-      </ul>
-    </li>
-    <li><a href="#documentation-de-référence">Documentation de référence</a></li>
+    <li><a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules</a></li>
+    <li><a href="#des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot</a></li>
+    <li><a href="#héritage-multiple-">Héritage multiple ?</a></li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<p>Les dépendances maven reposent sur un système de référentiel.
-Par défaut elle sont recherchées sur maven central : https://repo.maven.apache.org/maven2</p>
-<p>On peut dans ses configurations préciser d&rsquo;autres référentiels pour aller chercher les dépendances, ou paramétrer un miroir.</p>
-<h2 id="définition-dune-dépendances">Définition d&rsquo;une dépendances<a href="#définition-dune-dépendances" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Une dépendance consiste à aller charger un autre projet maven, on va donc retourver les éléments indispensables à la déclaration d&rsquo;un projet : groupId, artifactId et version.</p>
+			<h2 id="découper-en-modules">Découper en modules<a href="#découper-en-modules" class="anchor" aria-hidden="true">#</a> </h2>
+<p>On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, &hellip;).
+Admettons l&rsquo;architecture après découpage :</p>
 
 
 
@@ -481,31 +469,24 @@ Par défaut elle sont recherchées sur maven central : https://repo.maven.apache
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>re.dufau<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>mon.autre.projet<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>1.2.3<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span></span></span></code></pre></div>
+  <pre tabindex="0"><code>|
+|--api
+    |--pom.xml
+    `--src ...
+|--core
+    |--pom.xml
+    `--src ...
+`--batch
+    |--pom.xml
+    `--src ...</code></pre>
   </figure>
 </div>
-<p>Il y a cependant d&rsquo;autres paramètres requis mais ils ont des valeurs par défaut.</p>
-<h3 id="le-type">Le type<a href="#le-type" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Généralement, on va se servir d&rsquo;un dépendance pour récupérer du code sous la forme de classes compilées dans un jar.</p>
-<p>Le type est donc généralement <code>jar</code>, il s&rsquo;agit de la valeur par défaut.</p>
-<p>Cependant il peut être de type <code>pom</code> dans un cas spécifique présenté plus tard</p>
-<h3 id="le-scope">Le scope<a href="#le-scope" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Il permet de préciser l&rsquo;usage de la dépendance, par défaut le scope est <code>compile</code></p>
+<p>Pour présenter cet ensemble comme un prjet maven multi module, on va rajouter un pom dans le dossier racine. Ce pom sera le <strong>pom parent</strong> du projet.
+Il va devoir au mimimum contenir les conf suivantes :</p>
 <ul>
-<li><code>compile</code> : la dépendance sert dans le code &lsquo;main&rsquo; et doit être incluse au livrable</li>
-<li><code>test</code> : la dépendance ne sert que pour l&rsquo;éxécution des test (ex : jUnit), elle n&rsquo;est pas utilisé pour la compilation de &lsquo;main&rsquo; et ne sera pas incluse au livrable (les IDE ne la résolve donc pas dans &lsquo;main&rsquo;)</li>
-<li><code>provided</code>: la dépendance sert dans le code &lsquo;main&rsquo; mais ne doit pas être inclus au livrable car sera disponible par ailleurs au runtime (cas de certaines librairies tomcat par exemple)</li>
-<li><code>runtime</code>: non nécessaire à la compilation de &lsquo;main&rsquo; mais nécessaire à l&rsquo;éxécution (cas de Class.forName())</li>
+<li>passer au type <code>pom</code></li>
+<li>lister les dossiers correspondants aux modules</li>
 </ul>
-<h2 id="les-dépendances-transitives">Les dépendances transitives<a href="#les-dépendances-transitives" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Un bibilothèque mise en dépendance peut également déclarer ses propres dépendances.
-Elles seront alors automatiquement intégrées au projet.</p>
-<p><code>Si A --&gt; B et B --&gt; C&amp;D Alors A --&gt; B&amp;C&amp;D</code></p>
-<p>Il est possible d&rsquo;exclure certaines dépendances venant avec la librairie</p>
 
 
 
@@ -514,18 +495,18 @@ Elles seront alors automatiquement intégrées au projet.</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;exclusions&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;groupId&gt;</span>commons-logging<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;artifactId&gt;</span>commons-logging<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/exclusions&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;modules&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;module&gt;</span>api<span class="nt">&lt;/module&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;module&gt;</span>core<span class="nt">&lt;/module&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;module&gt;</span>batch<span class="nt">&lt;/module&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/modules&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>Cependant, le code peut utiliser une dépendance qu&rsquo;on a pas explicitement déclaré, ce qui peut être dangereux en maintenance</p>
-<h3 id="sélection-de-version">Sélection de version<a href="#sélection-de-version" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Mais que se passe-t-il si la même dépendance est déclarées dans plusieurs dépendances, et même directement dans nos dépendances, le tout en plusieures versions différente ?</p>
-<p>Revenons sur la déclaration de la dépendance</p>
+<p>Attention, il s&rsquo;agit du nom des fichiers et non pas des artifactId (qui pourront donc être différent du nom des dossiers).</p>
+<h2 id="initier-un-pom-parent">Initier un pom parent<a href="#initier-un-pom-parent" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Du point de vue des modules, il va falloir déclarer l&rsquo;héritage de ce pom parent.</p>
 
 
 
@@ -534,17 +515,84 @@ Elles seront alors automatiquement intégrées au projet.</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- Héritage du POM général--&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>group.id<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>pom-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>version<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/parent&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>Il s&rsquo;agit alors d&rsquo;une simple indication de la version souhaitée, on n&rsquo;aura pas la garantie d&rsquo;avoir au final cette version si d&rsquo;autres dépendances requierent des dépendances transitives plus stricte</p>
-<p>Si nos dépendances et toutes les dépendances transitives utilisent cette syntaxe, la version retenue sera :</p>
+<p><strong>Attention</strong> : en découpant en module, on rajoute des dépendances entre les modules qui n&rsquo;existaient a fortiori pas avant découpage.
+L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des modules maven.</p>
+<h2 id="exploiter-le-pom-parent">Exploiter le pom parent<a href="#exploiter-le-pom-parent" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Au delà du découpage en module, le pom parent permet de mutualiser des configurations. Tout projet maven récupère :</p>
 <ul>
-<li>1 - notre version déclarée le cas échéant</li>
-<li>2 - l&rsquo;une des version transitive selon l&rsquo;ordre de déclaration</li>
+<li>les propriétés</li>
+<li>les dépendences et gestion des dépendances</li>
+<li>les plugins et gestion des plugins</li>
 </ul>
-<p>Remarque : il n&rsquo;y a pas détermination de la version &ldquo;la plus récente&rdquo; par exemple</p>
-<h3 id="connaitre-les-résolutions-de-version-effectives">Connaitre les résolutions de version effectives<a href="#connaitre-les-résolutions-de-version-effectives" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Il faut éviter de déclarer toutes les dépendances du projet dans le pom parent, car des modules se retourveront avec des dépendances non nécessaire &ldquo;unitairement&rdquo; au module.</p>
+<p>Cependant on sohaite quand même concentrer le maximum de configuration dans le pom parent, qui peut servir d&rsquo;index des dépendances et plugins utilisés avec leur versions notamment.</p>
+<h3 id="le-dependencymanagement">Le dependencyManagement<a href="#le-dependencymanagement" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>test<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>a<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>1.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        ...
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencyManagement&gt;</span>   </span></span></code></pre></div>
+  </figure>
+</div>
+<p>On s&rsquo;en sert pour paramétrer globalement la version des dépendances sans charger la dépendance dans le projet parent</p>
+<p>La déclaration sera alors minimale dans l&rsquo;utilisation dans les projets fils :</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"> <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>test<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>a<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">      ...
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;dependencies&gt;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>L&rsquo;IDE va généralement alerter si on surcharge la version.</p>
+<p>Ce principe de management s&rsquo;applique à toutes les conf de la dépendance telles que le scope.</p>
+<p>Comme pour les dépendances, il existe un pluginManagement pour préconfigurer des plugin sans les éxécuter :</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;pluginManagement&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">        ...</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules<a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Plugin &ldquo;version&rdquo; :</p>
 
 
 
@@ -553,12 +601,10 @@ Elles seront alors automatiquement intégrées au projet.</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn dependency:tree -Dverbose</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn versions:set -DnewVersion<span class="o">=</span>1.2.3 </span></span></code></pre></div>
   </figure>
 </div>
-<h3 id="être-précis-sur-les-versions">Être précis sur les versions<a href="#être-précis-sur-les-versions" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Le système sera un peu plus complexe si certaines déclaration demande une version plus précise, ce qui peut parfois être cependant préférable pour s&rsquo;assurer d&rsquo;avoir par exemple au moins la premiere version ayant telle ou telle feature.</p>
-<p>La déclaration se fait alors via un sytème d&rsquo;intervalles</p>
+<h2 id="des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot<a href="#des-pom-parents-externes--le-cas-de-spring-boot" class="anchor" aria-hidden="true">#</a> </h2>
 
 
 
@@ -567,10 +613,32 @@ Elles seront alors automatiquement intégrées au projet.</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>[1.0]<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- Héritage Spring--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>3.4.3<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/parent&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>La 1.0 et rien d&rsquo;autre</p>
+<p>On va alors retrouver un dependencyManagment relativement complet :</p>
+<p><a href="https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.4.3/spring-boot-starter-parent-3.4.3.pom">https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.4.3/spring-boot-starter-parent-3.4.3.pom</a></p>
+<p>puis</p>
+<p><a href="https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.3/spring-boot-dependencies-3.4.3.pom">https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.3/spring-boot-dependencies-3.4.3.pom</a></p>
+<h2 id="héritage-multiple-">Héritage multiple ?<a href="#héritage-multiple-" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>Sous module qui a besoin spécifiquement d&rsquo;un autre parent ?</li>
+<li>Besoin de plusieurs dependencyManagment ?</li>
+</ul>
+<p>=&gt; on va récupérer uniquement ce qui nous interesse dans l&rsquo;héritage</p>
+<ul>
+<li>
+<p>On peut récupérer et &ldquo;combiner&rdquo; plusieurs dependencyManagement</p>
+</li>
+<li>
+<p>on passe par un BOM (Bill Of Materials)</p>
+</li>
+</ul>
 
 
 
@@ -579,61 +647,19 @@ Elles seront alors automatiquement intégrées au projet.</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>[1.0)<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">    <span class="nt">&lt;dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>test<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>test-BOM<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencyManagement&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>La 1.0 et toutes les version supérieures</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>(,1.0),(1.0,)<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
-  </figure>
-</div>
-<p>Tout sauf la 1.0</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>[1.0,2.0)<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
-  </figure>
-</div>
-<p>N&rsquo;importe quelle version superieure ou égale à 1.0 et strictement inférieure à la 2.0</p>
-<p>Maven cherchera un compromis entre version souhaitées mais il risque d&rsquo;y avoir un blocage de compilation en cas de 2 demandes strictes irréconciliables.</p>
-<p>par exemple :</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>(,1.0],[2.0,)<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
-  </figure>
-</div>
-<p>en meme temps que</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>[1.5]<span class="nt">&lt;/version&gt;</span></span></span></code></pre></div>
-  </figure>
-</div>
-<h2 id="documentation-de-référence">Documentation de référence<a href="#documentation-de-référence" class="anchor" aria-hidden="true">#</a> </h2>
-<p><a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html</a></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -651,7 +677,7 @@ Elles seront alors automatiquement intégrées au projet.</p>
 				</div>
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Préc</div>
-					<a href="/docs/commencer-avec-maven/le-fichier-pom/" class="stretched-link text-reset text-decoration-none">Le fichier POM</a>
+					<a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/" class="stretched-link text-reset text-decoration-none">La gestion des dépendances</a>
 				</div>
 			</div>
 		</div>
@@ -660,7 +686,7 @@ Elles seront alors automatiquement intégrées au projet.</p>
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Suiv</div>
-					<a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/" class="stretched-link text-reset text-decoration-none">Les modules et les héritages</a>
+					<a href="/docs/des-projets-plus-complexes/les-plugins/" class="stretched-link text-reset text-decoration-none">Les plugins</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

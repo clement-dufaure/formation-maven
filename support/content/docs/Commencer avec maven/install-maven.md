@@ -8,9 +8,9 @@ toc: true
 weight: 202
 ---
 
-# L'exécutable maven
+## L'exécutable maven
 
-## Installation de maven
+### Installation de maven
 Maven est un programme écrit en java, l'environnement java doit être correctement paramétré (soit via la variable d'environnement JAVA_HOME, soit en ayant correctement configuré java dans le path)
 
 - Télécharger et extraire l'archive sur le site de maven (https://maven.apache.org/download.cgi).
@@ -20,14 +20,16 @@ Maven est un programme écrit en java, l'environnement java doit être correctem
 mvn -v
 ```
 
-## Le maven wrapper
-Les projets peuvent intégrer directement l'exécutable maven dans leurs sources. Cela permet de s'assurer de la présence de maven et de la version d'éxécution de maven.
+### Le maven wrapper
+Les projets peuvent intégrer directement une référence à un exécutable maven dans leurs sources. Cela permet de s'assurer de la présence de maven et de la version d'éxécution de maven. Maven sera téléchargé (et mis en cache) lors de la première éxécution.
 
 ```sh
 ./mvnw -v
 ```
 
-# Configuration générale 
+> Exemple : Projets maven générés avec spring initializr : [https://start.spring.io/](https://start.spring.io/)
+
+## Configuration générale 
 
 - Propre à votre environnement de travail, autrement dit, commune à tout les projets
 - Dans le répertoire d'installation : /conf/settings.xml -> Eviter de modifier celui la, il est propre uniquement à cette installation
@@ -35,11 +37,12 @@ Les projets peuvent intégrer directement l'exécutable maven dans leurs sources
 - Il sera alors commun à toutes les installations et également aux wrappers
 
 
-# Execution
+## Execution
 
-```
+```sh
 mvn --help
-
+```
+```
 usage: mvn [options] [<goal(s)>] [<phase(s)>]
 ```
 

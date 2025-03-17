@@ -180,13 +180,21 @@
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+      </ul>
+    </details>
   </li>
 
   <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+    <details open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
   </li>
       </ul>
     </details>
@@ -366,13 +374,21 @@
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+      </ul>
+    </details>
   </li>
 
   <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+    <details open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
   </li>
       </ul>
     </details>
@@ -401,8 +417,14 @@
   <h3>Sur cette page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#installation-de-maven">Installation de maven</a></li>
-    <li><a href="#le-maven-wrapper">Le maven wrapper</a></li>
+    <li><a href="#lexécutable-maven">L&rsquo;exécutable maven</a>
+      <ul>
+        <li><a href="#installation-de-maven">Installation de maven</a></li>
+        <li><a href="#le-maven-wrapper">Le maven wrapper</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration-générale">Configuration générale</a></li>
+    <li><a href="#execution">Execution</a></li>
   </ul>
 </nav>
 </div>
@@ -418,16 +440,22 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#installation-de-maven">Installation de maven</a></li>
-    <li><a href="#le-maven-wrapper">Le maven wrapper</a></li>
+    <li><a href="#lexécutable-maven">L&rsquo;exécutable maven</a>
+      <ul>
+        <li><a href="#installation-de-maven">Installation de maven</a></li>
+        <li><a href="#le-maven-wrapper">Le maven wrapper</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration-générale">Configuration générale</a></li>
+    <li><a href="#execution">Execution</a></li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<h1 id="lexécutable-maven">L&rsquo;exécutable maven</h1>
-<h2 id="installation-de-maven">Installation de maven<a href="#installation-de-maven" class="anchor" aria-hidden="true">#</a> </h2>
+			<h2 id="lexécutable-maven">L&rsquo;exécutable maven<a href="#lexécutable-maven" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="installation-de-maven">Installation de maven<a href="#installation-de-maven" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Maven est un programme écrit en java, l&rsquo;environnement java doit être correctement paramétré (soit via la variable d&rsquo;environnement JAVA_HOME, soit en ayant correctement configuré java dans le path)</p>
 <ul>
 <li>Télécharger et extraire l&rsquo;archive sur le site de maven (https://maven.apache.org/download.cgi).</li>
@@ -444,8 +472,8 @@
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn -v</span></span></code></pre></div>
   </figure>
 </div>
-<h2 id="le-maven-wrapper">Le maven wrapper<a href="#le-maven-wrapper" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Les projets peuvent intégrer directement l&rsquo;exécutable maven dans leurs sources. Cela permet de s&rsquo;assurer de la présence de maven et de la version d&rsquo;éxécution de maven.</p>
+<h3 id="le-maven-wrapper">Le maven wrapper<a href="#le-maven-wrapper" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Les projets peuvent intégrer directement une référence à un exécutable maven dans leurs sources. Cela permet de s&rsquo;assurer de la présence de maven et de la version d&rsquo;éxécution de maven. Maven sera téléchargé (et mis en cache) lors de la première éxécution.</p>
 
 
 
@@ -457,14 +485,27 @@
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./mvnw -v</span></span></code></pre></div>
   </figure>
 </div>
-<h1 id="configuration-générale">Configuration générale</h1>
+<blockquote>
+<p>Exemple : Projets maven générés avec spring initializr : <a href="https://start.spring.io/">https://start.spring.io/</a></p></blockquote>
+<h2 id="configuration-générale">Configuration générale<a href="#configuration-générale" class="anchor" aria-hidden="true">#</a> </h2>
 <ul>
 <li>Propre à votre environnement de travail, autrement dit, commune à tout les projets</li>
 <li>Dans le répertoire d&rsquo;installation : /conf/settings.xml -&gt; Eviter de modifier celui la, il est propre uniquement à cette installation</li>
 <li>Il vaut mieux le surcharger par le fichier settings.xml dans <code>%USERPROFILE%/.m2</code> ou <code>$HOME/.m2</code></li>
 <li>Il sera alors commun à toutes les installations et également aux wrappers</li>
 </ul>
-<h1 id="execution">Execution</h1>
+<h2 id="execution">Execution<a href="#execution" class="anchor" aria-hidden="true">#</a> </h2>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn --help</span></span></code></pre></div>
+  </figure>
+</div>
 
 
 
@@ -473,9 +514,7 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <pre tabindex="0"><code>mvn --help
-
-usage: mvn [options] [&lt;goal(s)&gt;] [&lt;phase(s)&gt;]</code></pre>
+  <pre tabindex="0"><code>usage: mvn [options] [&lt;goal(s)&gt;] [&lt;phase(s)&gt;]</code></pre>
   </figure>
 </div>
 <ul>

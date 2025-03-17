@@ -182,13 +182,21 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+      </ul>
+    </details>
   </li>
 
   <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+    <details open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
   </li>
       </ul>
     </details>
@@ -368,13 +376,21 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
   <li>
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
-
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+      </ul>
+    </details>
   </li>
 
   <li>
-      <a href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+    <details open>
+      <summary>Des projets plus complexes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/les-plugins/">Les plugins</a>
   </li>
       </ul>
     </details>
@@ -403,9 +419,17 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
   <h3>Sur cette page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#la-version-de-java">La version de java</a></li>
-    <li><a href="#lencodage">L&rsquo;encodage</a></li>
-    <li><a href="#properties-personnalisées">Properties personnalisées</a></li>
+    <li><a href="#le-minimum">Le minimum</a></li>
+    <li><a href="#le-type-dartifact-à-construire">Le type d&rsquo;artifact à construire</a></li>
+    <li><a href="#déclaration-des-dépendances">Déclaration des dépendances</a></li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li><a href="#la-version-de-java">La version de java</a></li>
+        <li><a href="#lencodage">L&rsquo;encodage</a></li>
+        <li><a href="#properties-personnalisées">Properties personnalisées</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-paramètre-de-build">Les paramètre de build</a></li>
   </ul>
 </nav>
 </div>
@@ -421,9 +445,17 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#la-version-de-java">La version de java</a></li>
-    <li><a href="#lencodage">L&rsquo;encodage</a></li>
-    <li><a href="#properties-personnalisées">Properties personnalisées</a></li>
+    <li><a href="#le-minimum">Le minimum</a></li>
+    <li><a href="#le-type-dartifact-à-construire">Le type d&rsquo;artifact à construire</a></li>
+    <li><a href="#déclaration-des-dépendances">Déclaration des dépendances</a></li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li><a href="#la-version-de-java">La version de java</a></li>
+        <li><a href="#lencodage">L&rsquo;encodage</a></li>
+        <li><a href="#properties-personnalisées">Properties personnalisées</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-paramètre-de-build">Les paramètre de build</a></li>
   </ul>
 </nav>
     </div>
@@ -431,7 +463,7 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
 
 			</nav>
 			<p><a href="http://maven.apache.org/pom.html">Référence</a></p>
-<h1 id="le-minimum">Le minimum</h1>
+<h2 id="le-minimum">Le minimum<a href="#le-minimum" class="anchor" aria-hidden="true">#</a> </h2>
 
 
 
@@ -475,7 +507,7 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn help:effective-pom</span></span></code></pre></div>
   </figure>
 </div>
-<h1 id="le-type-dartifact-à-construire">Le type d&rsquo;artifact à construire</h1>
+<h2 id="le-type-dartifact-à-construire">Le type d&rsquo;artifact à construire<a href="#le-type-dartifact-à-construire" class="anchor" aria-hidden="true">#</a> </h2>
 
 
 
@@ -500,7 +532,7 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
 </div>
 <p>Permet à maven de lier les phases de build à certains plugins, et notemment la phase de packaging.</p>
 <p><a href="http://maven.apache.org/ref/3.6.3/maven-core/default-bindings.html">Voir les associations</a></p>
-<h1 id="déclaration-des-dépendances">Déclaration des dépendances</h1>
+<h2 id="déclaration-des-dépendances">Déclaration des dépendances<a href="#déclaration-des-dépendances" class="anchor" aria-hidden="true">#</a> </h2>
 
 
 
@@ -517,9 +549,9 @@ Le minimum &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:x
   </figure>
 </div>
 <p><a href="/docs/commencer-avec-maven/dependances/">Vers la partie dédiée</a></p>
-<h1 id="properties">Properties</h1>
+<h2 id="properties">Properties<a href="#properties" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Permettent de variabiliser dépendances, plugin ou généralement toute autre configuration de maven. Elles peuvent être personnalisées pour centraliser certaines configurations comme les versions.</p>
-<h2 id="la-version-de-java">La version de java<a href="#la-version-de-java" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="la-version-de-java">La version de java<a href="#la-version-de-java" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Quelquesoit le jdk que l&rsquo;on a installé, on peut souhaiter préciser la source dans laquelle est écrite le code et la version dans laquelle on va le compiler.
 Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éxécution sera en 17.</p>
 <p>Il faut non seulement que je compile mon code en 17 (la jre 17 de l&rsquo;éxécution refusera un code compilé en 21), ce qui signifie également que je ne dois écrire que des éléments de code existant en java 17 (même si mon jdk connait la syntaxe 21, il doit les considérer comme des erreurs).</p>
@@ -550,7 +582,7 @@ Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éx
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>ou comme génralement, on met la même version dans les deux :</p>
+<p>ou comme généralement, on met la même version dans les deux :</p>
 
 
 
@@ -579,7 +611,7 @@ Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éx
   </figure>
 </div>
 <p>Attention, par défaut maven compile en une vieille version de java (&lt;=1.8)</p>
-<h2 id="lencodage">L&rsquo;encodage<a href="#lencodage" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="lencodage">L&rsquo;encodage<a href="#lencodage" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Il s&rsquo;agit d&rsquo;indiquer à maven quel est l&rsquo;encodage des fichier qu&rsquo;il va lire, et dans quel encodage il doit écrire les fichier non compilés (ressourecs) :</p>
 
 
@@ -595,7 +627,7 @@ Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éx
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span></span></span></code></pre></div>
   </figure>
 </div>
-<h2 id="properties-personnalisées">Properties personnalisées<a href="#properties-personnalisées" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="properties-personnalisées">Properties personnalisées<a href="#properties-personnalisées" class="anchor" aria-hidden="true">#</a> </h3>
 <ul>
 <li>accessible depuis le reste du pom (<code>${prop}</code>)</li>
 <li>surchargeable par un argument en ligne de commande <code>-Dkey=value</code></li>
@@ -642,7 +674,7 @@ Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éx
   </figure>
 </div>
 <p><strong>Warning: Do not filter files with binary content like images! This will most likely result in corrupt output.</strong></p>
-<h1 id="les-paramètre-de-build">Les paramètre de build</h1>
+<h2 id="les-paramètre-de-build">Les paramètre de build<a href="#les-paramètre-de-build" class="anchor" aria-hidden="true">#</a> </h2>
 <p>L&rsquo;ensemble des paramètre dont une grande partie devrait rester implicite</p>
 
 
@@ -658,7 +690,6 @@ Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éx
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;finalName&gt;</span>${project.artifactId}-${project.version}<span class="nt">&lt;/finalName&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;testOutputDirectory&gt;</span>${project.build.directory}/test-classes<span class="nt">&lt;/testOutputDirectory&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;sourceDirectory&gt;</span>${project.basedir}/src/main/java<span class="nt">&lt;/sourceDirectory&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scriptSourceDirectory&gt;</span>src/main/scripts<span class="nt">&lt;/scriptSourceDirectory&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;testSourceDirectory&gt;</span>${project.basedir}/src/test/java<span class="nt">&lt;/testSourceDirectory&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;resources&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;resource&gt;</span>
@@ -676,48 +707,6 @@ Par exemple, j&rsquo;ai un jdk 21 mais je sais que mon environnement d&rsquo;éx
 </div>
 <p>Généralement, on va surtout personnaliser uniquement cette dernière balise de plugin pour ajouter des plugins et leurs goals dans le cycle de vie.</p>
 <p><a href="/docs/commencer-avec-maven/plugins/">Vers la partie dédiée</a></p>
-<h1 id="les-profils">Les profils</h1>
-<p>Il est possible de cumuler plusieurs configurations de build concurrentes via les profils, il sont ensuite appelable via la ligne de commande maven <code>-Pnomprofil</code></p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;profiles&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;profile&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;id&gt;</span>nomprofil<span class="nt">&lt;/id&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;ma.conf&gt;</span>maConfDeQf<span class="nt">&lt;/ma.conf&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/properties&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;build&gt;</span>
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/build&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/profile&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/profiles&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Ils peuvent également s&#39;activer sous conditions
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">```xml
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;profiles&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;profile&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;id&gt;</span>linux<span class="nt">&lt;/id&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;activation&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jdk&gt;</span>1.5<span class="nt">&lt;/jdk&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;os&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;family&gt;</span>!windows<span class="nt">&lt;/family&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/os&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/activation&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;linux&gt;</span>true<span class="nt">&lt;/linux&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/properties&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/profile&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/profiles&gt;</span></span></span></code></pre></div>
-  </figure>
-</div>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>

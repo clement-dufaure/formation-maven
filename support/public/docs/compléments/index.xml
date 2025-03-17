@@ -13,7 +13,7 @@
       <link>http://localhost:1313/docs/compl%C3%A9ments/compl%C3%A9ments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/compl%C3%A9ments/compl%C3%A9ments/</guid>
-      <description>&lt;h2 id=&#34;nouveau-projet-maven&#34;&gt;Nouveau projet Maven&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;utiliser un standard pour créer un projet maven&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;code&gt;mvn archetype:generate&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pour un projet spring boot, le spring initilizr https://start.spring.io/ crée tout ce qu&amp;rsquo;il faut si on lui demande un projet maven&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;déployer-sur-un-repository-maven-privé&#34;&gt;Déployer sur un repository maven (privé)&lt;/h2&gt;&#xA;&lt;p&gt;Si notre projet peut servir de dépendance à un autre projet, il peut être nécessaire de le rendre facilement accessible aux autres projet.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;nouveau-projet-maven&#34;&gt;Nouveau projet Maven&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Pour un projet spring boot, le spring initilizr &lt;a href=&#34;https://start.spring.io/&#34;&gt;https://start.spring.io/&lt;/a&gt; crée tout ce qu&amp;rsquo;il faut si on lui demande un projet maven&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

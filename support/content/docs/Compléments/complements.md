@@ -5,17 +5,14 @@ lead: ""
 draft: false
 images: []
 toc: true
-weight: 302
+weight: 402
 ---
 
 ## Nouveau projet Maven
 
-- utiliser un standard pour créer un projet maven
+- Pour un projet spring boot, le spring initilizr [https://start.spring.io/](https://start.spring.io/) crée tout ce qu'il faut si on lui demande un projet maven
 
-`mvn archetype:generate`
-
-- Pour un projet spring boot, le spring initilizr https://start.spring.io/ crée tout ce qu'il faut si on lui demande un projet maven
-
+- Mais il existe un plugin pour générer un projet plus générique : `mvn archetype:generate`
 
 
 ## Déployer sur un repository maven (privé)
@@ -32,25 +29,50 @@ On peut déclarer dans les configurations maven les urls des dépôts release et
 Ils y seront envoyés lors de la phase deploy.
 Ces conf sont surchargeable en ligne de commande : `-DaltDeployementRepository=<id>::default::<url>`
 
-Remarque, pour les dépôt non maven (déôt brut du jar ou war), il y a le plugin wagon, il est cependant devenu plus maintenable de définir ses déploiement non maven directement dans son script CI/CD.
+Remarque, pour les dépôt non maven (dépôt brut du jar ou war), il y a le plugin wagon, il est cependant devenu plus maintenable de définir ses déploiement non maven directement dans son script CI/CD.
 
 
-## Bonnes pratiques
+## Les profils
 
+Il est possible de cumuler plusieurs configurations de build concurrentes via les profils, il sont ensuite appelable via la ligne de commande maven `-Pnomprofil`
 
-On ne commit rien d'autre que
+```xml
+<profiles>
+  <profile>
+    <id>nomprofil</id>
+    <properties>
+      <ma.conf>maConfDeQf</ma.conf>
+    </properties>
+    <build>
+    ...
+    </build>
+  </profile>
+</profiles>
 ```
-projet
- |--src/
- |--pom.xml
-```
-- POM le plus petit possible
-- Version de dépendences centralisées (DependecyManagement + properties)
 
+
+Ils peuvent également s'activer sous conditions
+
+```xml
+<profiles>
+  <profile>
+    <id>linux</id>
+    <activation>
+      <jdk>1.5</jdk>
+      <os>
+        <family>!windows</family>
+      </os>
+    </activation>
+    <properties>
+      <linux>true</linux>
+    </properties>
+  </profile>
+</profiles>
+```
 
 ## Créer son propre plugin
 
-https://maven.apache.org/guides/plugin/guide-java-plugin-development.html
+[https://maven.apache.org/guides/plugin/guide-java-plugin-development.html](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 
 ## Options avancées de jvm

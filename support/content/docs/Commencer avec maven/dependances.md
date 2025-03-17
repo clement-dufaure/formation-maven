@@ -14,7 +14,7 @@ Par défaut elle sont recherchées sur maven central : https://repo.maven.apache
 On peut dans ses configurations préciser d'autres référentiels pour aller chercher les dépendances, ou paramétrer un miroir.
 
 
-# Définition d'une dépendances
+## Définition d'une dépendances
 
 Une dépendance consiste à aller charger un autre projet maven, on va donc retourver les éléments indispensables à la déclaration d'un projet : groupId, artifactId et version.
 
@@ -28,7 +28,7 @@ Une dépendance consiste à aller charger un autre projet maven, on va donc reto
 
 Il y a cependant d'autres paramètres requis mais ils ont des valeurs par défaut.
 
-## Le type
+### Le type
 
 Généralement, on va se servir d'un dépendance pour récupérer du code sous la forme de classes compilées dans un jar.
 
@@ -36,7 +36,7 @@ Le type est donc généralement `jar`, il s'agit de la valeur par défaut.
 
 Cependant il peut être de type `pom` dans un cas spécifique présenté plus tard
 
-## Le scope
+### Le scope
 
 Il permet de préciser l'usage de la dépendance, par défaut le scope est `compile`
 
@@ -45,7 +45,7 @@ Il permet de préciser l'usage de la dépendance, par défaut le scope est `comp
 - `provided`: la dépendance sert dans le code 'main' mais ne doit pas être inclus au livrable car sera disponible par ailleurs au runtime (cas de certaines librairies tomcat par exemple)
 - `runtime`: non nécessaire à la compilation de 'main' mais nécessaire à l'éxécution (cas de Class.forName())
 
-# Les dépendances transitives
+## Les dépendances transitives
 
 Un bibilothèque mise en dépendance peut également déclarer ses propres dépendances.
 Elles seront alors automatiquement intégrées au projet.
@@ -64,7 +64,7 @@ Il est possible d'exclure certaines dépendances venant avec la librairie
 
 Cependant, le code peut utiliser une dépendance qu'on a pas explicitement déclaré, ce qui peut être dangereux en maintenance
 
-## Sélection de version
+### Sélection de version
 
 Mais que se passe-t-il si la même dépendance est déclarées dans plusieurs dépendances, et même directement dans nos dépendances, le tout en plusieures versions différente ?
 
@@ -82,7 +82,13 @@ Si nos dépendances et toutes les dépendances transitives utilisent cette synta
 
 Remarque : il n'y a pas détermination de la version "la plus récente" par exemple
 
-## Être précis sur les versions
+### Connaitre les résolutions de version effectives
+
+```sh
+mvn dependency:tree -Dverbose
+```
+
+### Être précis sur les versions
 
 Le système sera un peu plus complexe si certaines déclaration demande une version plus précise, ce qui peut parfois être cependant préférable pour s'assurer d'avoir par exemple au moins la premiere version ayant telle ou telle feature.
 
@@ -129,20 +135,7 @@ en meme temps que
 <version>[1.5]</version>
 ```
 
+## Documentation de référence
 
-## Connaitre les résolutions de version effectives
-
-`mvn dependency:tree -Dverbose`
-
-
-# Eléments avancés
-
-Il est par exemple possible 
-- de préciser la version de compilation le cas échéant : `<classifier>jdk8</classifier>`
-- De préciser que l'on cherche juste à forcer une version dans les différentes dépendances transitives : `<optional>true</optional>`
-
-
-Plus de détails :
-
-https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html
+[https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
 

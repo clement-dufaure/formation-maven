@@ -50,7 +50,7 @@
 <meta property="og:url" content="http://localhost:1313/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">
   <meta property="og:site_name" content="Formation maven">
   <meta property="og:title" content="Les modules et les héritages">
-  <meta property="og:description" content="Un POM peut hériter d’un autre (avec le type pom). Un projet peut définir plusieurs modules qui seront liés entre eux Découper en modules On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, …). Admettons l’architecture après découpage :">
+  <meta property="og:description" content="Découper en modules On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, …). Admettons l’architecture après découpage :">
   <meta property="og:locale" content="fr">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -59,7 +59,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
   <meta name="twitter:title" content="Les modules et les héritages">
-  <meta name="twitter:description" content="Un POM peut hériter d’un autre (avec le type pom). Un projet peut définir plusieurs modules qui seront liés entre eux Découper en modules On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, …). Admettons l’architecture après découpage :">
+  <meta name="twitter:description" content="Découper en modules On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, …). Admettons l’architecture après découpage :">
       <meta name="twitter:site" content="@getdoks">
 
     
@@ -181,15 +181,19 @@
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
 
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
-  </li>
-
   <li class="active" >
       <a aria-current="page" href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
   </li>
+
+  <li>
+      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+  </li>
       </ul>
     </details>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/">Des projets plus complexes</a>
   </li>
 
   <li>
@@ -367,15 +371,19 @@
       <a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/">La gestion des dépendances</a>
   </li>
 
-  <li>
-      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
-  </li>
-
   <li class="active" >
       <a aria-current="page" href="/docs/commencer-avec-maven/les-modules-et-les-h%C3%A9ritages/">Les modules et les héritages</a>
   </li>
+
+  <li>
+      <a href="/docs/commencer-avec-maven/les-plugins/">Les plugins</a>
+  </li>
       </ul>
     </details>
+  </li>
+
+  <li>
+      <a href="/docs/des-projets-plus-complexes/">Des projets plus complexes</a>
   </li>
 
   <li>
@@ -401,8 +409,16 @@
   <h3>Sur cette page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#le-dependencymanagement">Le dependencyManagement</a></li>
+    <li><a href="#découper-en-modules">Découper en modules</a></li>
+    <li><a href="#initier-un-pom-parent">Initier un pom parent</a></li>
+    <li><a href="#exploiter-le-pom-parent">Exploiter le pom parent</a>
+      <ul>
+        <li><a href="#le-dependencymanagement">Le dependencyManagement</a></li>
+      </ul>
+    </li>
     <li><a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules</a></li>
+    <li><a href="#des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot</a></li>
+    <li><a href="#héritage-multiple-">Héritage multiple ?</a></li>
   </ul>
 </nav>
 </div>
@@ -418,19 +434,23 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#le-dependencymanagement">Le dependencyManagement</a></li>
+    <li><a href="#découper-en-modules">Découper en modules</a></li>
+    <li><a href="#initier-un-pom-parent">Initier un pom parent</a></li>
+    <li><a href="#exploiter-le-pom-parent">Exploiter le pom parent</a>
+      <ul>
+        <li><a href="#le-dependencymanagement">Le dependencyManagement</a></li>
+      </ul>
+    </li>
     <li><a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules</a></li>
+    <li><a href="#des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot</a></li>
+    <li><a href="#héritage-multiple-">Héritage multiple ?</a></li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<ul>
-<li>Un POM peut hériter d&rsquo;un autre (avec le type pom).</li>
-<li>Un projet peut définir plusieurs <strong>modules</strong> qui seront liés entre eux</li>
-</ul>
-<h1 id="découper-en-modules">Découper en modules</h1>
+			<h2 id="découper-en-modules">Découper en modules<a href="#découper-en-modules" class="anchor" aria-hidden="true">#</a> </h2>
 <p>On va découper un projet initial en plusieurs projet maven indépendant du point de vue du format (ils ont chacun leur pom, leur arborescence de source, &hellip;).
 Admettons l&rsquo;architecture après découpage :</p>
 
@@ -477,6 +497,7 @@ Il va devoir au mimimum contenir les conf suivantes :</p>
   </figure>
 </div>
 <p>Attention, il s&rsquo;agit du nom des fichiers et non pas des artifactId (qui pourront donc être différent du nom des dossiers).</p>
+<h2 id="initier-un-pom-parent">Initier un pom parent<a href="#initier-un-pom-parent" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Du point de vue des modules, il va falloir déclarer l&rsquo;héritage de ce pom parent.</p>
 
 
@@ -496,8 +517,8 @@ Il va devoir au mimimum contenir les conf suivantes :</p>
 </div>
 <p><strong>Attention</strong> : en découpant en module, on rajoute des dépendances entre les modules qui n&rsquo;existaient a fortiori pas avant découpage.
 L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des modules maven.</p>
-<h1 id="le-pom-parent">Le pom parent</h1>
-<p>Au delà du découpage en module, le pom parent permet de mutualiser des configurations. Tout projet maven récupèra :</p>
+<h2 id="exploiter-le-pom-parent">Exploiter le pom parent<a href="#exploiter-le-pom-parent" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Au delà du découpage en module, le pom parent permet de mutualiser des configurations. Tout projet maven récupère :</p>
 <ul>
 <li>les propriétés</li>
 <li>les dépendences et gestion des dépendances</li>
@@ -505,7 +526,7 @@ L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des 
 </ul>
 <p>Il faut éviter de déclarer toutes les dépendances du projet dans le pom parent, car des modules se retourveront avec des dépendances non nécessaire &ldquo;unitairement&rdquo; au module.</p>
 <p>Cependant on sohaite quand même concentrer le maximum de configuration dans le pom parent, qui peut servir d&rsquo;index des dépendances et plugins utilisés avec leur versions notamment.</p>
-<h2 id="le-dependencymanagement">Le dependencyManagement<a href="#le-dependencymanagement" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="le-dependencymanagement">Le dependencyManagement<a href="#le-dependencymanagement" class="anchor" aria-hidden="true">#</a> </h3>
 
 
 
@@ -547,36 +568,6 @@ L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des 
 </div>
 <p>L&rsquo;IDE va généralement alerter si on surcharge la version.</p>
 <p>Ce principe de management s&rsquo;applique à toutes les conf de la dépendance telles que le scope.</p>
-<h2 id="mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules<a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Plugin &ldquo;version&rdquo; :</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <pre tabindex="0"><code>mvn versions:set -DnewVersion=1.2.3 </code></pre>
-  </figure>
-</div>
-<h1 id="des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot</h1>
-
-
-
-<div class="expressive-code">
-  <figure class="frame not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- Héritage Spring--&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;parent&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.4.0<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/parent&gt;</span></span></span></code></pre></div>
-  </figure>
-</div>
 <p>Comme pour les dépendances, il existe un pluginManagement pour préconfigurer des plugin sans les éxécuter :</p>
 
 
@@ -592,7 +583,41 @@ L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des 
 </span></span><span class="line"><span class="cl">        ...</span></span></code></pre></div>
   </figure>
 </div>
-<h1 id="héritage-multiple-">Héritage multiple ?</h1>
+<h2 id="mettre-à-jour-toutes-les-références-à-la-version-des-modules">Mettre à jour toutes les références à la version des modules<a href="#mettre-à-jour-toutes-les-références-à-la-version-des-modules" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Plugin &ldquo;version&rdquo; :</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn versions:set -DnewVersion<span class="o">=</span>1.2.3 </span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="des-pom-parents-externes--le-cas-de-spring-boot">Des pom parents externes : le cas de Spring Boot<a href="#des-pom-parents-externes--le-cas-de-spring-boot" class="anchor" aria-hidden="true">#</a> </h2>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- Héritage Spring--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>3.4.3<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/parent&gt;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>On va alors retrouver un dependencyManagment relativement complet :</p>
+<p><a href="https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.4.3/spring-boot-starter-parent-3.4.3.pom">https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.4.3/spring-boot-starter-parent-3.4.3.pom</a></p>
+<p>puis</p>
+<p><a href="https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.3/spring-boot-dependencies-3.4.3.pom">https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.3/spring-boot-dependencies-3.4.3.pom</a></p>
+<h2 id="héritage-multiple-">Héritage multiple ?<a href="#héritage-multiple-" class="anchor" aria-hidden="true">#</a> </h2>
 <ul>
 <li>Sous module qui a besoin spécifiquement d&rsquo;un autre parent ?</li>
 <li>Besoin de plusieurs dependencyManagment ?</li>
@@ -644,7 +669,7 @@ L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des 
 				</div>
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Préc</div>
-					<a href="/docs/commencer-avec-maven/les-plugins/" class="stretched-link text-reset text-decoration-none">Les plugins</a>
+					<a href="/docs/commencer-avec-maven/la-gestion-des-d%C3%A9pendances/" class="stretched-link text-reset text-decoration-none">La gestion des dépendances</a>
 				</div>
 			</div>
 		</div>
@@ -653,7 +678,7 @@ L&rsquo;ordre de ces dépendance impactera l&rsquo;ordre d&rsquo;exécution des 
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Suiv</div>
-					<a href="/docs/compl%C3%A9ments/compl%C3%A9ments/" class="stretched-link text-reset text-decoration-none">Compléments</a>
+					<a href="/docs/commencer-avec-maven/les-plugins/" class="stretched-link text-reset text-decoration-none">Les plugins</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

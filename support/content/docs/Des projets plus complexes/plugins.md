@@ -5,12 +5,12 @@ lead: ""
 draft: false
 images: []
 toc: true
-weight: 206
+weight: 307
 ---
 
-En maven, toutes les exécution sont des goals contenues dans des plugins, les mapping phase->goals des plugins essentiels étant définis par défaut.
+En plus de tous les plugins chargés par défaut, il est possible de personnaliser leur configuration et d'en ajouter d'autres
 
-# Déclaration d'un plugin
+## Déclaration d'un plugin
 
 Exemple : le plugin de compilation
 
@@ -86,7 +86,7 @@ Ce qui donnera dans le pom effectif
 
 
 
-# Utilisation d'un plugin
+## Utilisation d'un plugin
 
 
 - Directement par le goal voulu
@@ -108,10 +108,15 @@ Ce qui donnera dans le pom effectif
       </executions>
 ```
 
-RAPPEL des mappings par défaut : http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings)
+RAPPEL des mappings par défaut : [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings)
 
 
-# Quelques plugins
+
+
+
+## Quelques plugins à ajouter dans son projet 
+
+### Avoir un code bien formatté
 
 **Spotless plugin** : formatter son code
 
@@ -157,36 +162,50 @@ ou d'exécution ponctuelle :
 mvn spotless:apply
 ```
 
-**Maven surefire plugin** : intégré d'office, parfois à paramétrer
-Lancer les tests unitaire
+### Tester et mesurer sa converture de test
 
-https://maven.apache.org/surefire/maven-surefire-plugin/usage.html
+**Maven surefire plugin** est intégré et exécuté d'office, il lance les tests unitaires selon une norme définie par le plugin (et personnalisable si besoin)
 
-**Maven failsafe plugin**
-Lancer les tests d'intégration
+[https://maven.apache.org/surefire/maven-surefire-plugin/usage.html](https://maven.apache.org/surefire/maven-surefire-plugin/usage.html)
 
-https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html
+**Maven failsafe plugin** est à ajouter pour éxécuter des test d'intégration **au sens Maven**, c'est à dire des tests nécessitant un packaging de l'application.
+
+Le plugin est très similaire au plugin surefire, les changements essentiels sont le nommage des classes par défaut et la position par défaut dans le cycke de vie.
+
+[https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html](https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html)
 
 
-**JaCoCo**
-Mesurer la couverture de test
+Remarque : sans que ce soit nécéessairement une mauvaise pratique, il est parfois utile de sauter l'éxécution des tests (tests longs, découpage du pipeline en taches élémentaires, ...)
 
-https://www.eclemma.org/jacoco/trunk/doc/maven.html
+[Les plugins surfire et failsafe prévoient de sauter simplement les phases de tests.](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/skipping-tests.html)
+
+```sh
+mvn package -DskipTests
+```
+
+**JaCoCo** va rajouter un agent java lors de l'éxécution des tests pour mesurer la couverture de test
+
+[https://www.eclemma.org/jacoco/trunk/doc/maven.html](https://www.eclemma.org/jacoco/trunk/doc/maven.html)
+
+
+### Déployer vers les outils de qualimétrie
 
 **Sonar**
 
-https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
+[https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/)
 
+### Création avancée de livrable
 
-**Maven Assembly plugin**
-Préciser un artifact personnalisé
+**Maven Assembly plugin** : Définir un artifact personnalisé
 
-http://maven.apache.org/plugins/maven-assembly-plugin/
+[http://maven.apache.org/plugins/maven-assembly-plugin/](http://maven.apache.org/plugins/maven-assembly-plugin/)
 
 Description xml du livrable, par exemple obtenir un zip contenant le jar + tous les jar de dépendances :
 
-```
-<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+```xml
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
 
     <id>zip</id>
 
@@ -215,7 +234,7 @@ Description xml du livrable, par exemple obtenir un zip contenant le jar + tous 
 ```
 
 A configurer à la phase package :
-```
+```xml
 <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
@@ -237,36 +256,28 @@ A configurer à la phase package :
             </plugin>
 ```
 
+### Exécutions avancées pour tests d'intégration
 
 
 **Maven Exec plugin**
 Excution d'executable (par exemple avant un test d'intégration)
 
-https://www.mojohaus.org/exec-maven-plugin/
-
-
-**Maven Build Helper plugin**
-Ensemble d'aide à la construction (récupération ip locale, ajout de source au classpath)
-
-https://www.mojohaus.org/build-helper-maven-plugin/plugin-info.html
-
-
-**Maven Versions plugin**
-Gérer les Versions
-
-https://www.mojohaus.org/versions/versions-maven-plugin/
+[https://www.mojohaus.org/exec-maven-plugin/](https://www.mojohaus.org/exec-maven-plugin/)
 
 
 **Cargo plugin**
 Lancer un tomcat avec votre war (par exemple avant un test d'intégration)
 
-https://codehaus-cargo.github.io/cargo/Home.html
+[https://codehaus-cargo.github.io/cargo/Home.html](https://codehaus-cargo.github.io/cargo/Home.html)
+
+
+### Sécurité des dépendances
 
 
 **Dependency check**
 Controler les CVE des librairies
 
-https://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+[https://jeremylong.github.io/DependencyCheck/dependency-check-maven/](https://jeremylong.github.io/DependencyCheck/dependency-check-maven/)
 
 --
 
@@ -301,6 +312,12 @@ Exemple de déclaration :
 
 Ca marche parce que par défaut le goal "check" de dependency check s'éxécute à la phase "verify"
 
+
+### Divers
+
+**Maven Versions plugin** : c'est celui qu'on a utilisé pour changer toutes les versions d'un projet multimodule d'un coup
+
+[https://www.mojohaus.org/versions/versions-maven-plugin/](https://www.mojohaus.org/versions/versions-maven-plugin/)
 
 
 
