@@ -114,3 +114,9 @@ Utiliser pour cela le plugin assembly avec la conf suivante :
     <fileSets>
 ```
 
+## 5
+
+J'aimerais maintenant bénéficier de Spring Boot et faire en sorte que mon projet web soit packagé en fat-jar (le reste doit rester tel quel)
+
+On peut s'inspirer de la génération d'un projet via Spring initializr
+
