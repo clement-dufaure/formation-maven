@@ -49,7 +49,7 @@ javac @./build/sources.txt -d ./build/classes
 -> Il faut télécharger les librairies nécessaires : création du classpath avec les jar externes requis
 ```sh
 find src -name "*.java"  > ./build/sources.txt
-javac @./build/sources.txt -d ./build/classes -cp "./classpath/cmain/*"
+javac @./build/sources.txt -d ./build/classes -cp "./classpath/main/*"
 ```
 
 3e problème : les jars que l'on récupère ont eux aussi des dépendances...
@@ -140,7 +140,7 @@ Ce qui donne :
 
 ```sh
 javac ./test/re/dufau/demo/dao/UserDaoTest.java  -d ./build/test-classes/ -cp "./build/classes;./classpath/test/*"
-java -jar ./lib/test/junit-platform-console-standalone-1.10.1.jar -cp "./classpath/main/;./classpath/test/;./build/test-classes/;./build/classes/" --select-class re.dufau.demo.dao.UserDaoTest
+java -cp "./classpath/main/;./classpath/test/;./build/test-classes/;./build/classes/" -jar ./classpath/test/junit-platform-console-standalone-6.1.3.jar  execute --select-file re.dufau.demo.dao.UserDaoTest
 ```
 
 ## Avez vous envie de lancer toutes ces commandes à chaque build ?
