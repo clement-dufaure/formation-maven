@@ -21,7 +21,7 @@ mvn -v
 ```
 
 ### Le maven wrapper
-Les projets peuvent intégrer directement une référence à un exécutable maven dans leurs sources. Cela permet de s'assurer de la présence de maven et de la version d'éxécution de maven. Maven sera téléchargé (et mis en cache) lors de la première éxécution.
+Les projets peuvent intégrer directement une référence à un exécutable maven dans leurs sources. Cela permet de s'assurer de la présence de maven et de la version d’exécution de maven. Maven sera téléchargé (et mis en cache) lors de la première exécution.
 
 ```sh
 ./mvnw -v
@@ -32,7 +32,7 @@ Les projets peuvent intégrer directement une référence à un exécutable mave
 ## Configuration générale 
 
 - Propre à votre environnement de travail, autrement dit, commune à tout les projets
-- Dans le répertoire d'installation : /conf/settings.xml -> Eviter de modifier celui la, il est propre uniquement à cette installation
+- Dans le répertoire d'installation : /conf/settings.xml -> Éviter de modifier celui-là, il est propre uniquement à cette installation
 - Il vaut mieux le surcharger par le fichier settings.xml dans `%USERPROFILE%/.m2` ou `$HOME/.m2`
 - Il sera alors commun à toutes les installations et également aux wrappers
 

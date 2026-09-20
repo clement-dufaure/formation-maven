@@ -116,9 +116,9 @@ RAPPEL des mappings par défaut : [http://maven.apache.org/guides/introduction/i
 
 ## Quelques plugins à ajouter dans son projet 
 
-### Avoir un code bien formatté
+### Avoir un code bien formaté
 
-**Spotless plugin** : formatter son code
+**Spotless plugin** : formater son code
 
 https://github.com/diffplug/spotless
 
@@ -310,7 +310,7 @@ Exemple de déclaration :
     </project>
 ```
 
-Ca marche parce que par défaut le goal "check" de dependency check s'éxécute à la phase "verify"
+Ca marche parce que par défaut le goal "check" de dependency check s’exécute à la phase "verify"
 
 
 ### Divers

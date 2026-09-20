@@ -41,9 +41,9 @@ Cependant il peut être de type `pom` dans un cas spécifique présenté plus ta
 Il permet de préciser l'usage de la dépendance, par défaut le scope est `compile`
 
 - `compile` : la dépendance sert dans le code 'main' et doit être incluse au livrable
-- `test` : la dépendance ne sert que pour l'éxécution des test (ex : jUnit), elle n'est pas utilisé pour la compilation de 'main' et ne sera pas incluse au livrable (les IDE ne la résolve donc pas dans 'main')
+- `test` : la dépendance ne sert que pour l’exécution des test (ex : jUnit), elle n'est pas utilisé pour la compilation de 'main' et ne sera pas incluse au livrable (les IDE ne la résolve donc pas dans 'main')
 - `provided`: la dépendance sert dans le code 'main' mais ne doit pas être inclus au livrable car sera disponible par ailleurs au runtime (cas de certaines librairies tomcat par exemple)
-- `runtime`: non nécessaire à la compilation de 'main' mais nécessaire à l'éxécution (cas de Class.forName())
+- `runtime`: non nécessaire à la compilation de 'main' mais nécessaire à l’exécution (cas de Class.forName())
 
 ## Les dépendances transitives
 
@@ -66,7 +66,7 @@ Cependant, le code peut utiliser une dépendance qu'on a pas explicitement décl
 
 ### Sélection de version
 
-Mais que se passe-t-il si la même dépendance est déclarées dans plusieurs dépendances, et même directement dans nos dépendances, le tout en plusieures versions différente ?
+Mais que se passe-t-il si la même dépendance est déclarées dans plusieurs dépendances, et même directement dans nos dépendances, le tout en plusieurs versions différente ?
 
 Revenons sur la déclaration de la dépendance
 
@@ -74,7 +74,7 @@ Revenons sur la déclaration de la dépendance
 <version>1.0</version>
 ```
 
-Il s'agit alors d'une simple indication de la version souhaitée, on n'aura pas la garantie d'avoir au final cette version si d'autres dépendances requierent des dépendances transitives plus stricte
+Il s'agit alors d'une simple indication de la version souhaitée, on n'aura pas la garantie d'avoir au final cette version si d'autres dépendances requièrent des dépendances transitives plus stricte
 
 Si nos dépendances et toutes les dépendances transitives utilisent cette syntaxe, la version retenue sera :
 - 1 - notre version déclarée le cas échéant
@@ -90,10 +90,10 @@ mvn dependency:tree -Dverbose
 
 ### Être précis sur les versions
 
-Le système sera un peu plus complexe si certaines déclaration demande une version plus précise, ce qui peut parfois être cependant préférable pour s'assurer d'avoir par exemple au moins la premiere version ayant telle ou telle feature.
+Le système sera un peu plus complexe si certaines déclaration demande une version plus précise, ce qui peut parfois être cependant préférable pour s'assurer d'avoir par exemple au moins la première version ayant telle ou telle feature.
 
 
-La déclaration se fait alors via un sytème d'intervalles
+La déclaration se fait alors via un système d'intervalles
 
 ```xml
 <version>[1.0]</version>
@@ -118,7 +118,7 @@ Tout sauf la 1.0
 <version>[1.0,2.0)</version>
 ```
 
-N'importe quelle version superieure ou égale à 1.0 et strictement inférieure à la 2.0
+N'importe quelle version supérieure ou égale à 1.0 et strictement inférieure à la 2.0
 
 
 Maven cherchera un compromis entre version souhaitées mais il risque d'y avoir un blocage de compilation en cas de 2 demandes strictes irréconciliables.
@@ -129,7 +129,7 @@ par exemple :
 <version>(,1.0],[2.0,)</version>
 ```
 
-en meme temps que
+en mème temps que
 
 ```xml
 <version>[1.5]</version>

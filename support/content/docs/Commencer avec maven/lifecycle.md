@@ -22,7 +22,7 @@ Si le nom du plugin correspond à la syntaxe maven-PPP-plugin, si une version es
 mvn PPP:nom-du-goal
 ```
 
-Par exemple, la compilation du code se fait avec le plugin `maven-compiler-plugin`, il possède deux goals `compile` pour compiler le code principal et `testCompile` pour compiler le code de test. On va appeller ces deux goals :
+Par exemple, la compilation du code se fait avec le plugin `maven-compiler-plugin`, il possède deux goals `compile` pour compiler le code principal et `testCompile` pour compiler le code de test. On va appeler ces deux goals :
 ```sh
 mvn compiler:compile
 mvn compiler:testCompile
@@ -32,7 +32,7 @@ Cependant la plupart du temps on souhaite enchaîner logiquement plusieurs goals
 
 ## Le cycle de vie du build
 
-Maven décrit plusieurs enchaînements de phase décrivant les étapes fines de contruction d'un projet.
+Maven décrit plusieurs enchaînements de phase décrivant les étapes fines de construction d'un projet.
 
 [Lifecycle Reference](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#lifecycle-reference)
 
@@ -53,8 +53,8 @@ Même si on peut théoriquement appeler toutes les phases, on appelle générale
 -  test - Test le projet
 -  package - Crée un fichier livrable
 -  verify - Vérifie le projet (tests d'intégration)
--  install - Installe le livrable dans le dépot local
--  deploy - Déploie le livrable dans le dépot distant
+-  install - Installe le livrable dans le dépôt local
+-  deploy - Déploie le livrable dans le dépôt distant
 
 ## Configuration et conventions
 

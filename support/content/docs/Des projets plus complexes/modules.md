@@ -26,8 +26,8 @@ Admettons l'architecture après découpage :
     `--src ...
 ```
 
-Pour présenter cet ensemble comme un prjet maven multi module, on va rajouter un pom dans le dossier racine. Ce pom sera le **pom parent** du projet.
-Il va devoir au mimimum contenir les conf suivantes :
+Pour présenter cet ensemble comme un projet maven multi module, on va rajouter un pom dans le dossier racine. Ce pom sera le **pom parent** du projet.
+Il va devoir au minimum contenir les conf suivantes :
 - passer au type `pom`
 - lister les dossiers correspondants aux modules
 
@@ -63,12 +63,12 @@ L'ordre de ces dépendance impactera l'ordre d'exécution des modules maven.
 
 Au delà du découpage en module, le pom parent permet de mutualiser des configurations. Tout projet maven récupère :
 - les propriétés
-- les dépendences et gestion des dépendances
+- les dépendances et gestion des dépendances
 - les plugins et gestion des plugins
 
-Il faut éviter de déclarer toutes les dépendances du projet dans le pom parent, car des modules se retourveront avec des dépendances non nécessaire "unitairement" au module.
+Il faut éviter de déclarer toutes les dépendances du projet dans le pom parent, car des modules se retrouveront avec des dépendances non nécessaire "unitairement" au module.
 
-Cependant on sohaite quand même concentrer le maximum de configuration dans le pom parent, qui peut servir d'index des dépendances et plugins utilisés avec leur versions notamment.
+Cependant on souhaite quand même concentrer le maximum de configuration dans le pom parent, qui peut servir d'index des dépendances et plugins utilisés avec leur versions notamment.
 
 ### Le dependencyManagement
 
@@ -103,7 +103,7 @@ L'IDE va généralement alerter si on surcharge la version.
 Ce principe de management s'applique à toutes les conf de la dépendance telles que le scope.
 
 
-Comme pour les dépendances, il existe un pluginManagement pour préconfigurer des plugin sans les éxécuter :
+Comme pour les dépendances, il existe un pluginManagement pour préconfigurer des plugin sans les exécuter :
 
 ```xml
     <pluginManagement>
@@ -149,7 +149,7 @@ puis
 - Sous module qui a besoin spécifiquement d'un autre parent ?
 - Besoin de plusieurs dependencyManagment ?
 
-=> on va récupérer uniquement ce qui nous interesse dans l'héritage
+=> on va récupérer uniquement ce qui nous intéresse dans l'héritage
 
 - On peut récupérer et "combiner" plusieurs dependencyManagement
 

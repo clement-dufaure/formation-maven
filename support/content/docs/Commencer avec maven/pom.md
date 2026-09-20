@@ -50,7 +50,7 @@ mvn help:effective-pom
   <packaging>war</packaging>
 ```
 
-Permet à maven de lier les phases de build à certains plugins, et notemment la phase de packaging.
+Permet à maven de lier les phases de build à certains plugins, et notamment la phase de packaging.
 
 [Voir les associations](http://maven.apache.org/ref/3.6.3/maven-core/default-bindings.html)
 
@@ -73,16 +73,16 @@ Permettent de variabiliser dépendances, plugin ou généralement toute autre co
 ### La version de java
 
 Quelquesoit le jdk que l'on a installé, on peut souhaiter préciser la source dans laquelle est écrite le code et la version dans laquelle on va le compiler.
-Par exemple, j'ai un jdk 21 mais je sais que mon environnement d'éxécution sera en 17.
+Par exemple, j'ai un jdk 21 mais je sais que mon environnement d’exécution sera en 17.
 
-Il faut non seulement que je compile mon code en 17 (la jre 17 de l'éxécution refusera un code compilé en 21), ce qui signifie également que je ne dois écrire que des éléments de code existant en java 17 (même si mon jdk connait la syntaxe 21, il doit les considérer comme des erreurs).
+Il faut non seulement que je compile mon code en 17 (la jre 17 de l’exécution refusera un code compilé en 21), ce qui signifie également que je ne dois écrire que des éléments de code existant en java 17 (même si mon jdk connaît la syntaxe 21, il doit les considérer comme des erreurs).
 
 Ces deux éléments correspondent aux deux options de javac :
 ```sh
 javac ... -source 17 -target 17
 ```
 
-On va préciser ces élement à maven via les properties (qui seront injectées dans le plugin compiler)
+On va préciser ces éléments à maven via les properties (qui seront injectées dans le plugin compiler)
 
 ```xml
 <properties>
@@ -110,7 +110,7 @@ Attention, par défaut maven compile en une vieille version de java (<=1.8)
 
 ### L'encodage
 
-Il s'agit d'indiquer à maven quel est l'encodage des fichier qu'il va lire, et dans quel encodage il doit écrire les fichier non compilés (ressourecs) :
+Il s'agit d'indiquer à maven quel est l'encodage des fichier qu'il va lire, et dans quel encodage il doit écrire les fichier non compilés (ressources) :
 
 ```xml
 <properties>
@@ -142,7 +142,7 @@ Il s'agit d'indiquer à maven quel est l'encodage des fichier qu'il va lire, et 
 
 ```
 
-Certaines propriétés sont autmatiques telles que `${project.version}` donnant la valeur de la balise version du projet.
+Certaines propriétés sont automatiques telles que `${project.version}` donnant la valeur de la balise version du projet.
 
 
 Les properties peuvent être injectées dans les ressources, c'est le filtering

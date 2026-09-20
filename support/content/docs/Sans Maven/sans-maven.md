@@ -15,8 +15,8 @@ ou *De quoi va-t-on parler ?*
 
 - Exécuter du code java
 - Exécuter conjointement plusieurs classes ensemble
-- Utiliser du code de biliothèques externes
-- Changer la version d'un bibliothèque
+- Utiliser du code de bibliothèques externes
+- Changer la version d'une bibliothèque
 - Préparer un déploiement : fournir un jar/war
 - Lancer des tests unitaires ?
 
@@ -69,12 +69,12 @@ javac @./build/sources.txt -d ./build/classes -source 11 -target 11
 
 ## Création du livrable
 
-"livrable" = moyen de tranfert standard
+"livrable" = moyen de transfert standard
 
 - le JAR = java archive
 C'est un zip contenant les classes compilées (et des métadonnées dans un dossier META-INF)
 Il permet l'échange de code (bibliothèque de dépendance).
-Il peut être excutable : présence d'une méthode `main()`, lancement via `java -jar`
+Il peut être exécutable : présence d'une méthode `main()`, lancement via `java -jar`
 
 ```
 META-INF/
@@ -89,7 +89,7 @@ re/
 
 - le WAR = web application archive 
 C'est un zip contenant les classes compilées et les fichiers web (jsp/html/css...). C'est un "bout" d'application, le reste de l'appli (dont le `main()`) se trouvant dans un conteneur d'application comme tomcat.
-Le war n'est pas prévu pour s'éxécuter seul.
+Le war n'est pas prévu pour s’exécuter seul.
 
 ```
 META-INF/
@@ -128,13 +128,13 @@ Dans l'IDE, ca compile pas ?
 
 ## Lancer les tests
 
-Logique similaire à l'éxécution de mon code
+Logique similaire à l’exécution de mon code
 
 - On va devoir compiler les classes de tests
 - Ces classes de tests vont dépendre
   - de mon code "runtime"
   - des dépendances de mon code "runtime"
-  - de dépendances spécifiques à l'éxécution des tests
+  - de dépendances spécifiques à l’exécution des tests
 
 Ce qui donne :
 
@@ -159,7 +159,7 @@ Des outils cherchent à faciliter et automatiser ces étapes.
 
 - Maven
   - Configuration XML
-  - La logique de maven repose sur des **conventions**, sous réserve d'avoir une architecture de code aux stardards maven, un fichier de configuration toujours au format xml assez minimal permet de réaliser les opération précitées.
+  - La logique de maven repose sur des **conventions**, sous réserve d'avoir une architecture de code aux standards maven, un fichier de configuration toujours au format xml assez minimal permet de réaliser les opération précitées.
   - Les principales opérations seront ainsi sous-entendues (non explicitées dans la conf).
   - Logique de dépendances avec référentiel
   - Approche déclarative
@@ -168,8 +168,8 @@ Des outils cherchent à faciliter et automatiser ces étapes.
   - Approche impérative mais avec langage JVM (Groovy/Kotlin)
   - Repose également sur un système de référentiel pour les dépendances
 
-Au delà des opérations essentielles précentées les outils vont permettre de réaliser une multiplicité de tâches.
-Avec la présence quasi systèmatique de pipeline CI/CD sur nos applications, il faudra parfois choisir entre intégrer certaines tâches à travers l'outils de buils choisi, ou directement en opérations CI/CD
+Au delà des opérations essentielles présentées les outils vont permettre de réaliser une multiplicité de tâches.
+Avec la présence quasi systématique de pipeline CI/CD sur nos applications, il faudra parfois choisir entre intégrer certaines tâches à travers l'outils de builds choisi, ou directement en opérations CI/CD
 
 
 
