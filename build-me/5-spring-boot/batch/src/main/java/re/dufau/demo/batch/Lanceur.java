@@ -1,4 +1,3 @@
-/* (C)2026 */
 package re.dufau.demo.batch;
 
 public class Lanceur {
@@ -7,4 +6,5 @@ public class Lanceur {
         UserBatch userBatch = new UserBatch();
         userBatch.execute();
     }
+
 }

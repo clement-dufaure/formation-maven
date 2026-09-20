@@ -1,10 +1,9 @@
-/* (C)2026 */
 package re.dufau.demo.batch;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import re.dufau.demo.dao.UserDao;
 import re.dufau.demo.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UserBatch {
 
@@ -19,4 +18,6 @@ public class UserBatch {
         logger.info("Envoi d'un mail à {}", user.getName());
         // TODO envoyer un mail !
     }
+
+
 }

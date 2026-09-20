@@ -1,10 +1,9 @@
-/* (C)2026 */
 package re.dufau.demo.dao;
+
+import re.dufau.demo.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import re.dufau.demo.model.User;
-
 public class UserDao {
 
     static List<User> users = new ArrayList<>();
@@ -20,11 +19,12 @@ public class UserDao {
         return users;
     }
 
-    public User getUser(String name) {
+    public User getUser(String name){
         return users.stream().filter(user -> user.getName().equals(name)).findFirst().orElse(null);
     }
 
-    public void addUser(User u) {
+    public void addUser(User u){
         users.add(u);
     }
+
 }

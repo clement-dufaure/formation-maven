@@ -1,4 +1,3 @@
-/* (C)2026 */
 package re.dufau.demo.model;
 
 public class User {

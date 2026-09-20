@@ -1,11 +1,11 @@
-/* (C)2026 */
 package re.dufau.demo.web;
 
-import java.util.List;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 import re.dufau.demo.dao.UserDao;
 import re.dufau.demo.model.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -14,7 +14,7 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/hello")
-    public String getHello() {
+    public String getHello(){
         return "Hello World !!";
     }
 
@@ -35,4 +35,5 @@ public class UserController {
     public void postMessage(@RequestBody User user) {
         userDao.addUser(user);
     }
+
 }
